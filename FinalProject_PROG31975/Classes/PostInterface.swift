@@ -34,5 +34,24 @@ class PostInterface : NSObject {
         //TODO: Update indicator UI.
         self.allVotes? += myVote
     }
+
+    func getPostID() -> Int {
+        return self.postID!
+    }
+    func getAuthorID() -> Int {
+        return self.authorID!
+    }
+    func getMessage() -> String {
+        return self.message!
+    }
+    func getAllVotes() -> Int {
+        return self.allVotes!
+    }
+    func getMyVote() -> Int {
+        return self.myVote!
+    }
+    func getPostedTime() -> String {
+        return self.postedTime!
+    }
 }
 

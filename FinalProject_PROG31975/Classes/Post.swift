@@ -15,16 +15,20 @@ class Post : PostInterface {
     private var allReplies = Array<Reply>() // Historic list of all replies associated with this post.
 
     override func initWithData(authorID:Int, message:String, postedTime:String) {
+        // Constructor - calls parent constructor.
+        
         super.initWithData(authorID: authorID, message: message, postedTime: postedTime)
     }
 
     func addReply(reply:Reply) {
         // Appends a new Reply to the Post's list of Replies.
+        
         self.allReplies.append(reply) 
     }
 
     func getLocation() -> String {
         // Return the posted location.
+        
         return "Fake location"
     }
 }

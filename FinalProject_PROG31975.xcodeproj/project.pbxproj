@@ -17,6 +17,7 @@
 		00B78CD7218CD68E00157530 /* Reply.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B78CD6218CD68E00157530 /* Reply.swift */; };
 		00B78CD9218D32AE00157530 /* PostInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B78CD8218D32AE00157530 /* PostInterface.swift */; };
 		00B78CDB2193F92F00157530 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B78CDA2193F92F00157530 /* PostViewController.swift */; };
+		232AE8572194A76A00D60E86 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232AE8562194A76A00D60E86 /* PostTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		00B78CD6218CD68E00157530 /* Reply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reply.swift; sourceTree = "<group>"; };
 		00B78CD8218D32AE00157530 /* PostInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostInterface.swift; sourceTree = "<group>"; };
 		00B78CDA2193F92F00157530 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		232AE8562194A76A00D60E86 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 			children = (
 				00B78CBB2187CDEC00157530 /* AppDelegate.swift */,
 				00B78CD8218D32AE00157530 /* PostInterface.swift */,
+				232AE8562194A76A00D60E86 /* PostTableViewCell.swift */,
 				00B78CD2218CD05900157530 /* Post.swift */,
 				00B78CD6218CD68E00157530 /* Reply.swift */,
 				00B78CD4218CD2E400157530 /* User.swift */,
@@ -193,6 +196,7 @@
 				00B78CD5218CD2E400157530 /* User.swift in Sources */,
 				00B78CD7218CD68E00157530 /* Reply.swift in Sources */,
 				00B78CDB2193F92F00157530 /* PostViewController.swift in Sources */,
+				232AE8572194A76A00D60E86 /* PostTableViewCell.swift in Sources */,
 				00B78CBE2187CDEC00157530 /* ViewController.swift in Sources */,
 				00B78CD3218CD05900157530 /* Post.swift in Sources */,
 				00B78CBC2187CDEC00157530 /* AppDelegate.swift in Sources */,

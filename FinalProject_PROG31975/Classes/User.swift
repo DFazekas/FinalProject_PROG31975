@@ -23,6 +23,8 @@ class User : NSObject {
     var emailNotification : Bool? // Controls whether to send email notifications as well (i.e., ON or OFF).
     
     func initWithData(name:String, email:String, currentLocation:String) {
+        // Constructor.
+        
         self.id = -1 //TODO: Assign unique ID.
         self.name = name
         self.email = email

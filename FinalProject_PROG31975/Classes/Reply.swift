@@ -14,12 +14,15 @@ class Reply : PostInterface {
     private var avatarColor : String? // Displayed color representating the User.
     
     override func initWithData(authorID:Int, message:String, postedTime:String) {
-        super.initWithData(authorID: authorID, message: message, postedTime: postedTime)
+        // Constructor - calls parent constructor.
         
-        avatarColor = findColor()
+        super.initWithData(authorID: authorID, message: message, postedTime: postedTime)
+        avatarColor = findColor() // Set appropriate color to reply.
     }
     
     func findColor() -> String {
+        // Replies are color-coordinated to identify anonymous users.
+        
         //TODO: Record author's previous Replies, use same color as before.
         return "fake color"
     }
