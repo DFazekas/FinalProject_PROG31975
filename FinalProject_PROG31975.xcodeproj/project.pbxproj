@@ -12,6 +12,11 @@
 		00B78CC12187CDEC00157530 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00B78CBF2187CDEC00157530 /* Main.storyboard */; };
 		00B78CC32187CDEF00157530 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00B78CC22187CDEF00157530 /* Assets.xcassets */; };
 		00B78CC62187CDEF00157530 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00B78CC42187CDEF00157530 /* LaunchScreen.storyboard */; };
+		00B78CD3218CD05900157530 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B78CD2218CD05900157530 /* Post.swift */; };
+		00B78CD5218CD2E400157530 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B78CD4218CD2E400157530 /* User.swift */; };
+		00B78CD7218CD68E00157530 /* Reply.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B78CD6218CD68E00157530 /* Reply.swift */; };
+		00B78CD9218D32AE00157530 /* PostInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B78CD8218D32AE00157530 /* PostInterface.swift */; };
+		00B78CDB2193F92F00157530 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B78CDA2193F92F00157530 /* PostViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +27,11 @@
 		00B78CC22187CDEF00157530 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		00B78CC52187CDEF00157530 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		00B78CC72187CDEF00157530 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		00B78CD2218CD05900157530 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		00B78CD4218CD2E400157530 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		00B78CD6218CD68E00157530 /* Reply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reply.swift; sourceTree = "<group>"; };
+		00B78CD8218D32AE00157530 /* PostInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostInterface.swift; sourceTree = "<group>"; };
+		00B78CDA2193F92F00157530 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +64,59 @@
 		00B78CBA2187CDEC00157530 /* FinalProject_PROG31975 */ = {
 			isa = PBXGroup;
 			children = (
-				00B78CBB2187CDEC00157530 /* AppDelegate.swift */,
-				00B78CBD2187CDEC00157530 /* ViewController.swift */,
-				00B78CBF2187CDEC00157530 /* Main.storyboard */,
-				00B78CC22187CDEF00157530 /* Assets.xcassets */,
-				00B78CC42187CDEF00157530 /* LaunchScreen.storyboard */,
+				00B78CD12187D04200157530 /* View Controllers */,
+				00B78CD02187D03300157530 /* Classes */,
+				00B78CCF2187D02A00157530 /* Assets */,
+				00B78CCE2187D01600157530 /* Storyboards */,
+				00B78CCD2187D00100157530 /* Database */,
 				00B78CC72187CDEF00157530 /* Info.plist */,
 			);
 			path = FinalProject_PROG31975;
+			sourceTree = "<group>";
+		};
+		00B78CCD2187D00100157530 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		00B78CCE2187D01600157530 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				00B78CBF2187CDEC00157530 /* Main.storyboard */,
+				00B78CC42187CDEF00157530 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		00B78CCF2187D02A00157530 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				00B78CC22187CDEF00157530 /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		00B78CD02187D03300157530 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				00B78CBB2187CDEC00157530 /* AppDelegate.swift */,
+				00B78CD8218D32AE00157530 /* PostInterface.swift */,
+				00B78CD2218CD05900157530 /* Post.swift */,
+				00B78CD6218CD68E00157530 /* Reply.swift */,
+				00B78CD4218CD2E400157530 /* User.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		00B78CD12187D04200157530 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				00B78CBD2187CDEC00157530 /* ViewController.swift */,
+				00B78CDA2193F92F00157530 /* PostViewController.swift */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,8 +190,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00B78CD5218CD2E400157530 /* User.swift in Sources */,
+				00B78CD7218CD68E00157530 /* Reply.swift in Sources */,
+				00B78CDB2193F92F00157530 /* PostViewController.swift in Sources */,
 				00B78CBE2187CDEC00157530 /* ViewController.swift in Sources */,
+				00B78CD3218CD05900157530 /* Post.swift in Sources */,
 				00B78CBC2187CDEC00157530 /* AppDelegate.swift in Sources */,
+				00B78CD9218D32AE00157530 /* PostInterface.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
