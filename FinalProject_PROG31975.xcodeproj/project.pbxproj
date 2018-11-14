@@ -17,6 +17,10 @@
 		00B78CD7218CD68E00157530 /* Reply.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B78CD6218CD68E00157530 /* Reply.swift */; };
 		00B78CD9218D32AE00157530 /* PostInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B78CD8218D32AE00157530 /* PostInterface.swift */; };
 		00B78CDB2193F92F00157530 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B78CDA2193F92F00157530 /* PostViewController.swift */; };
+		00B78D60219C8D7600157530 /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B78D5F219C8D7600157530 /* MeViewController.swift */; };
+		00B78D62219CA53E00157530 /* PeeksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B78D61219CA53E00157530 /* PeeksViewController.swift */; };
+		00B78D64219CA54C00157530 /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B78D63219CA54C00157530 /* MoreViewController.swift */; };
+		00B78D66219CA68800157530 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B78D65219CA68800157530 /* SettingsViewController.swift */; };
 		232AE8572194A76A00D60E86 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232AE8562194A76A00D60E86 /* PostTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +37,10 @@
 		00B78CD6218CD68E00157530 /* Reply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reply.swift; sourceTree = "<group>"; };
 		00B78CD8218D32AE00157530 /* PostInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostInterface.swift; sourceTree = "<group>"; };
 		00B78CDA2193F92F00157530 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		00B78D5F219C8D7600157530 /* MeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
+		00B78D61219CA53E00157530 /* PeeksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeeksViewController.swift; sourceTree = "<group>"; };
+		00B78D63219CA54C00157530 /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
+		00B78D65219CA68800157530 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		232AE8562194A76A00D60E86 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -118,6 +126,10 @@
 			children = (
 				00B78CBD2187CDEC00157530 /* ViewController.swift */,
 				00B78CDA2193F92F00157530 /* PostViewController.swift */,
+				00B78D5F219C8D7600157530 /* MeViewController.swift */,
+				00B78D61219CA53E00157530 /* PeeksViewController.swift */,
+				00B78D63219CA54C00157530 /* MoreViewController.swift */,
+				00B78D65219CA68800157530 /* SettingsViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -193,14 +205,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00B78D60219C8D7600157530 /* MeViewController.swift in Sources */,
+				00B78D62219CA53E00157530 /* PeeksViewController.swift in Sources */,
 				00B78CD5218CD2E400157530 /* User.swift in Sources */,
 				00B78CD7218CD68E00157530 /* Reply.swift in Sources */,
+				00B78D64219CA54C00157530 /* MoreViewController.swift in Sources */,
 				00B78CDB2193F92F00157530 /* PostViewController.swift in Sources */,
 				232AE8572194A76A00D60E86 /* PostTableViewCell.swift in Sources */,
 				00B78CBE2187CDEC00157530 /* ViewController.swift in Sources */,
 				00B78CD3218CD05900157530 /* Post.swift in Sources */,
 				00B78CBC2187CDEC00157530 /* AppDelegate.swift in Sources */,
 				00B78CD9218D32AE00157530 /* PostInterface.swift in Sources */,
+				00B78D66219CA68800157530 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
