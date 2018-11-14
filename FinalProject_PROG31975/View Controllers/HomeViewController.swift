@@ -52,6 +52,16 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         return tableCell
     }
 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // Onclick handling.
+        
+        // Record selected Post to display in Replies page.
+        //let mainDelegate = UIApplication.shared.delegate as! AppDelegate
+        //mainDelegate.selectedPost = posts[indexPath.row]
+        
+        // Segue to Replies page.
+        performSegue(withIdentifier: "ViewRepliesSegue", sender: nil)
+    }
     
     ///// Misc. content.
     func initFakeData() {

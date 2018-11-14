@@ -137,17 +137,17 @@
                                 <rect key="frame" x="0.0" y="400" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Temporary btn Replies"/>
-                                <connections>
-                                    <segue destination="zCT-dD-LZR" kind="popoverPresentation" popoverAnchorView="hmX-ez-JA4" id="zMK-6o-Blr">
-                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                    </segue>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="icon_home" badgeValue="2" selectedImage="icon_home" id="Xcz-By-Zzb"/>
+                    <connections>
+                        <segue destination="zCT-dD-LZR" kind="popoverPresentation" identifier="ViewRepliesSegue" popoverAnchorView="IPT-qu-ytW" id="H3E-9X-GRZ">
+                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                        </segue>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
