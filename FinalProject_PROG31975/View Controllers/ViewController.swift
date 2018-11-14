@@ -15,8 +15,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func initFakeData() {
         let postObj = Post()
         postObj.initWithData(authorID: 1023123, message: "Just realized that beef jerky is kinda like a cow raisin", postedTime: "11-08-2018 17:56")
-        
         posts.append(postObj)
+        
+        let postObj2 = Post()
+        postObj2.initWithData(authorID: 1223423, message: "That awkward moment when you're in the bathroom stall and you make eye contact with the person checking to see if the stall is empty", postedTime: "11-08-2018 17:56")
+        posts.append(postObj2)
     }
     
     override func viewDidLoad() {
