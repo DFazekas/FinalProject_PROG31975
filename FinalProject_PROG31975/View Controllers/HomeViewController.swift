@@ -12,15 +12,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
     var posts : [Post] = [] // List of Posts to display.
     
-
-    ///// Navigation content.
-    private func setupNavigationBarItems() {
-        //TODO: Finish customizing top navigation bar to fit design.
-        
-        let titleViewImage = UIImageView(image: #imageLiteral(resourceName: "icon_add"))
-        navigationItem.titleView = titleViewImage
-    }
-    
     
     ///// TableView content.
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -56,8 +47,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         // Onclick handling.
         
         // Record selected Post to display in Replies page.
-        //let mainDelegate = UIApplication.shared.delegate as! AppDelegate
-        //mainDelegate.selectedPost = posts[indexPath.row]
+        let mainDelegate = UIApplication.shared.delegate as! AppDelegate
+        mainDelegate.selectedPost = posts[indexPath.row]
         
         // Segue to Replies page.
         performSegue(withIdentifier: "ViewRepliesSegue", sender: nil)

@@ -1,18 +1,18 @@
 //
-//  PostTableViewCell.swift
+//  ReplyTableViewCell.swift
 //  FinalProject_PROG31975
 //
-//  Created by Devon Fazekas on 11/8/18.
+//  Created by Devon on 2018-11-14.
 //  Copyright © 2018 PROG31975. All rights reserved.
 //
 
 import UIKit
 
-class PostTableViewCell: UITableViewCell {
+class ReplyTableViewCell: UITableViewCell {
 
     @IBOutlet var lblMessage : UILabel!     // Displays the message of the post.
+    @IBOutlet var imgAvatar : UIImageView!  // Displays the user's unique avatar.
     @IBOutlet var lblTimestamp : UILabel!   // Displays the time since posted.
-    @IBOutlet var lblReplies : UILabel!     // Dislays number of replies, if any.
     @IBOutlet var lblRating : UILabel!      // Displays the rating of the post.
     @IBOutlet var btnUpvote : UIButton!     // Button for upvoting the post.
     @IBOutlet var btnDownvote : UIButton!   // Button for downvoting the post.
@@ -38,5 +38,4 @@ class PostTableViewCell: UITableViewCell {
         // Update label.
         lblRating.text = String(currentRate + vote)
     }
-    
 }
