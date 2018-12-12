@@ -14,7 +14,7 @@ class Post : PostInterface {
     private var numberOfReplies : Int? // Displayed sum of replies for this post.
     private var allReplies = Array<Reply>() // Historic list of all replies associated with this post.
 
-    override func initWithData(authorID:Int, message:String, postedTime:String) {
+    override func initWithData(authorID:String, message:String, postedTime:String) {
         // Constructor - calls parent constructor.
         
         super.initWithData(authorID: authorID, message: message, postedTime: postedTime)

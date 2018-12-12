@@ -12,13 +12,13 @@ class PostInterface : NSObject {
     // Post contains data of the ananomous, public post.
     
     private var postID : Int? // The identifier of the post.
-    private var authorID : Int? // Identifier of the original poster.
+    private var authorID : String? // Identifier of the original poster.
     private var message : String? // The displayed message.
     private var allVotes : Int? // Sum of votes displayed.
     private var myVote : Int? // Displayed user vote.
     private var postedTime : String? // Displayed timestamp (e.g., 26m, 3h, 4d, 2y).
     
-    func initWithData(authorID:Int, message:String, postedTime:String) {
+    func initWithData(authorID:String, message:String, postedTime:String) {
         // Constructor.
         
         self.postID = 0 //TODO: assign unique ID.
@@ -38,7 +38,7 @@ class PostInterface : NSObject {
     func getPostID() -> Int {
         return self.postID!
     }
-    func getAuthorID() -> Int {
+    func getAuthorID() -> String {
         return self.authorID!
     }
     func getMessage() -> String {

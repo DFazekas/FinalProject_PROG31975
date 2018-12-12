@@ -11,11 +11,17 @@ import UIKit
 class GetData: NSObject {
     
     var dbData : [NSDictionary]?
-    let myUrl = "http://markbeauchamp.ca:5000/api/posts" as String
+    var myUrl = "http://markbeauchamp.ca:5000/api/posts" as String
     
     enum JSONError: String, Error {
         case NoData = "ERROR: no data"
         case ConversionFailed = "ERROR: conversion from JSON failed"
+    }
+    
+    func getPosts(){
+        self.myUrl = "http://markbeauchamp.ca:5000/api/posts" as String
+        jsonParser()
+        
     }
     
     
