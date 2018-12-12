@@ -24,8 +24,8 @@
                                 <items>
                                     <navigationItem id="Ogi-LD-5rN">
                                         <nil key="title"/>
-                                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="bM9-bC-reZ">
-                                            <rect key="frame" x="86" y="7.5" width="203" height="29"/>
+                                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="bM9-bC-reZ">
+                                            <rect key="frame" x="146" y="7.5" width="83" height="29"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <segments>
                                                 <segment title="New"/>
@@ -598,6 +598,9 @@
                         <viewLayoutGuide key="safeArea" id="bjn-tg-pqk"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Peeks" image="icon_peek" id="hXj-Qa-cFR"/>
+                    <connections>
+                        <outlet property="peekTable" destination="5PO-Lf-eng" id="aob-24-8bL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ebz-3L-Hmj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

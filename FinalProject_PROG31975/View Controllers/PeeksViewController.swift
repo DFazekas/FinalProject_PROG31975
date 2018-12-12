@@ -14,6 +14,9 @@ class PeeksViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     let mainDelegate = UIApplication.shared.delegate as! AppDelegate
     
+    let getData = GetData()
+    @IBOutlet var peekTable : UITableView!
+    
     @IBOutlet var tblView : UITableView!
     @IBOutlet var locTextField : UITextField!
     
@@ -67,6 +70,8 @@ class PeeksViewController: UIViewController, UITableViewDataSource, UITableViewD
     ///// Misc. content.
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        getData.jsonParser()
     }
 
     override func didReceiveMemoryWarning() {
