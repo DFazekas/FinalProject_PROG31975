@@ -34,6 +34,7 @@
 		DF6DB36821B67D4F0085CF11 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6DB36721B67D4F0085CF11 /* NotificationController.swift */; };
 		DF6DB36A21B67D4F0085CF11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF6DB36921B67D4F0085CF11 /* Assets.xcassets */; };
 		DF6DB36F21B67D4F0085CF11 /* FinalProjectWatch_PROG31975.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = DF6DB35221B67D4C0085CF11 /* FinalProjectWatch_PROG31975.app */; };
+		DF95725F21C1BFDA0036120D /* GetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF95725E21C1BFDA0036120D /* GetData.swift */; };
 		DFD0116821B629E900922ED7 /* Locations.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD0116721B629E900922ED7 /* Locations.swift */; };
 		DFD0116A21B62CC500922ED7 /* PeekCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD0116921B62CC500922ED7 /* PeekCell.swift */; };
 /* End PBXBuildFile section */
@@ -113,6 +114,7 @@
 		DF6DB36921B67D4F0085CF11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DF6DB36B21B67D4F0085CF11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DF6DB36C21B67D4F0085CF11 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		DF95725E21C1BFDA0036120D /* GetData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetData.swift; sourceTree = "<group>"; };
 		DFD0116721B629E900922ED7 /* Locations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Locations.swift; sourceTree = "<group>"; };
 		DFD0116921B62CC500922ED7 /* PeekCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeekCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -198,6 +200,7 @@
 		00B78CD02187D03300157530 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				DF95725E21C1BFDA0036120D /* GetData.swift */,
 				00B78CBB2187CDEC00157530 /* AppDelegate.swift */,
 				00B78CD8218D32AE00157530 /* PostInterface.swift */,
 				232AE8562194A76A00D60E86 /* PostTableViewCell.swift */,
@@ -397,6 +400,7 @@
 				00B78CD7218CD68E00157530 /* Reply.swift in Sources */,
 				00B78D64219CA54C00157530 /* MoreViewController.swift in Sources */,
 				00B78CDB2193F92F00157530 /* PostViewController.swift in Sources */,
+				DF95725F21C1BFDA0036120D /* GetData.swift in Sources */,
 				232AE8572194A76A00D60E86 /* PostTableViewCell.swift in Sources */,
 				00B78CBE2187CDEC00157530 /* HomeViewController.swift in Sources */,
 				00B78CD3218CD05900157530 /* Post.swift in Sources */,
