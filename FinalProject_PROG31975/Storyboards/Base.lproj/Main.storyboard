@@ -542,11 +542,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5PO-Lf-eng">
-                                <rect key="frame" x="0.0" y="64" width="375" height="518"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="38" id="luJ-nd-bVr">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="peekCell" rowHeight="38" id="luJ-nd-bVr" customClass="PeekCell" customModule="FinalProject_PROG31975" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="38"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="luJ-nd-bVr" id="LE9-7H-cG7">
@@ -564,13 +564,13 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="lblMessage" destination="mFG-3O-qAe" id="lVo-c7-qne"/>
+                                            <outlet property="lblMessage" destination="mFG-3O-qAe" id="i4F-T5-tdl"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="8fx-Tq-Wh9"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="aOg-st-dy8"/>
+                                    <outlet property="dataSource" destination="fmf-9K-Chd" id="Hcg-UY-XgU"/>
+                                    <outlet property="delegate" destination="fmf-9K-Chd" id="Ah7-T1-tVz"/>
                                 </connections>
                             </tableView>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="obP-IL-exP">
@@ -604,7 +604,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ebz-3L-Hmj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1401" y="886"/>
+            <point key="canvasLocation" x="1400.8" y="884.70764617691157"/>
         </scene>
         <!--More-->
         <scene sceneID="mCa-YL-5lE">

@@ -2,9 +2,10 @@
 //  PeeksViewController.swift
 //  FinalProject_PROG31975
 //
-//  Created by Devon on 2018-11-14.
+//  Created by Justine on 2018-12-3.
 //  Copyright © 2018 PROG31975. All rights reserved.
 //
+
 //Justine Manikan
 //December 3rd, 2018
 
@@ -17,7 +18,6 @@ class PeeksViewController: UIViewController, UITableViewDataSource, UITableViewD
     let getData = GetData()
     @IBOutlet var peekTable : UITableView!
     
-    @IBOutlet var tblView : UITableView!
     @IBOutlet var locTextField : UITextField!
     
     @IBAction func findLocation(sender : UIBarButtonItem){
@@ -56,11 +56,13 @@ class PeeksViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let tableCell = tableView.dequeueReusableCell(withIdentifier: "peek") as? PeekCell ??
-            PeekCell(style: .default, reuseIdentifier: "peek")
+        let tableCell : PeekCell = tableView.dequeueReusableCell(withIdentifier: "peekCell") as?
+        PeekCell ?? PeekCell(style: .default, reuseIdentifier: "peekCell")
         
-        let rowNum = indexPath.row
-        //tableCell.lblMessage.text = mainDelegate.pee
+        let row = indexPath.row
+        
+        let rowData = (getData.dbData?[row])! as NSDictionary
+        tableCell.lblMessage.text = rowData["message"] as? String
         
         
         //placeholder
