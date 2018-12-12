@@ -10,13 +10,54 @@ import UIKit
 
 class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-    var posts : [Post] = [] // List of Posts to display.
     
+    var posts : [Post] = [] // List of Posts to display.
+    var timer : Timer!
+    let getData = GetData()
+    @IBOutlet var myTable : UITableView!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.timer = Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: #selector(self.refreshTable), userInfo: nil, repeats: true);
+        
+        getData.getPosts()
+        
+        
+    }
+    
+    // swift 4 update
+    @objc func refreshTable(){
+        if(getData.dbData != nil)
+        {
+            if (getData.dbData?.count)! > 0
+            {
+                posts = []
+                for i in getData.dbData!{
+                    
+              
+                     let p = Post()
+         
+                    p.initWithData(authorID: i["user"] as! String, message: i["message"] as! String, postedTime: i["time_posted"] as! String)
+                    posts.append(p)
+                    
+                }
+                self.myTable.reloadData()
+                self.timer.invalidate()
+            }
+        }
+    }
     
     ///// TableView content.
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // How many Posts to display.
-        return posts.count
+        if getData.dbData != nil
+        {
+            return (getData.dbData?.count)!
+        }
+        else
+        {
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -32,11 +73,13 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         // Obtain Post to display.
         let rowObj : Post = posts[indexPath.row]
-
-        tableCell.lblMessage.text = rowObj.getMessage()
-        tableCell.lblRating.text = "101"
+        
+        let likes = 0
+        
+        tableCell.lblMessage.text = rowObj.getMessage() as? String
+        tableCell.lblRating.text = String(likes)
         tableCell.lblReplies.text = "2 Replies"
-        tableCell.lblTimestamp.text = "1h"
+        tableCell.lblTimestamp.text = rowObj.getPostedTime() as? String
         
         //TODO: Finish displaying Post data.
         
@@ -57,11 +100,11 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     ///// Misc. content.
     func initFakeData() {
         let postObj = Post()
-        postObj.initWithData(authorID: 1023123, message: "Just realized that beef jerky is kinda like a cow raisin", postedTime: "11-08-2018 17:56")
+        postObj.initWithData(authorID: "1023123", message: "Just realized that beef jerky is kinda like a cow raisin", postedTime: "11-08-2018 17:56")
         posts.append(postObj)
         
         let postObj2 = Post()
-        postObj2.initWithData(authorID: 1223423, message: "That awkward moment when you're in the bathroom stall and you make eye contact with the person checking to see if the stall is empty", postedTime: "11-08-2018 17:56")
+        postObj2.initWithData(authorID: "1223423", message: "That awkward moment when you're in the bathroom stall and you make eye contact with the person checking to see if the stall is empty", postedTime: "11-08-2018 17:56")
         posts.append(postObj2)
     }
     

@@ -13,7 +13,7 @@ class Reply : PostInterface {
     
     private var avatarColor : String? // Displayed color representating the User.
     
-    override func initWithData(authorID:Int, message:String, postedTime:String) {
+    override func initWithData(authorID:String, message:String, postedTime:String) {
         // Constructor - calls parent constructor.
         
         super.initWithData(authorID: authorID, message: message, postedTime: postedTime)
