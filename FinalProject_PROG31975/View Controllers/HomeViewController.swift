@@ -3,6 +3,7 @@
 //  FinalProject_PROG31975
 //
 //  Created by Devon on 2018-10-29.
+//  Programmed by Mark
 //  Copyright © 2018 PROG31975. All rights reserved.
 //
 
@@ -11,6 +12,8 @@ import UIKit
 class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     var posts : [Post] = [] // List of Posts to display.
+    
+    //
     
     
     ///// TableView content.
