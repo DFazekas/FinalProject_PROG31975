@@ -10,12 +10,18 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
     var window: UIWindow?
     var selectedPost : Post? = nil // Used to display Post and Replies on Replies page.
+    var databaseName : String? = ""
+    var databasePath : String?
+    var peeks : [Data] = []
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        
+        
         return true
     }
 

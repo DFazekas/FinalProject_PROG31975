@@ -561,11 +561,6 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bbZ-bj-e3L">
-                                                    <rect key="frame" x="338" y="3" width="30" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="&gt;"/>
-                                                </button>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
@@ -583,7 +578,11 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Peeks" id="iyU-Jf-zDZ">
-                                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="fJy-H9-661"/>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="fJy-H9-661">
+                                            <connections>
+                                                <action selector="findLocationWithSender:" destination="fmf-9K-Chd" id="lAu-ra-gKq"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
