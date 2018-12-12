@@ -24,6 +24,8 @@
 		00B78D68219CB3DE00157530 /* RepliesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B78D67219CB3DE00157530 /* RepliesViewController.swift */; };
 		00B78D6A219CC2F900157530 /* ReplyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B78D69219CC2F900157530 /* ReplyTableViewCell.swift */; };
 		232AE8572194A76A00D60E86 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232AE8562194A76A00D60E86 /* PostTableViewCell.swift */; };
+		3025DCC721C1C35A006DA045 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3025DCC621C1C35A006DA045 /* MapKit.framework */; };
+		3025DCC921C1C362006DA045 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3025DCC821C1C362006DA045 /* CoreLocation.framework */; };
 		DF6DB35621B67D4C0085CF11 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF6DB35421B67D4C0085CF11 /* Interface.storyboard */; };
 		DF6DB35821B67D4D0085CF11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF6DB35721B67D4D0085CF11 /* Assets.xcassets */; };
 		DF6DB35F21B67D4D0085CF11 /* FinalProjectWatch_PROG31975 Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = DF6DB35E21B67D4D0085CF11 /* FinalProjectWatch_PROG31975 Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -102,6 +104,8 @@
 		00B78D67219CB3DE00157530 /* RepliesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepliesViewController.swift; sourceTree = "<group>"; };
 		00B78D69219CC2F900157530 /* ReplyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplyTableViewCell.swift; sourceTree = "<group>"; };
 		232AE8562194A76A00D60E86 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		3025DCC621C1C35A006DA045 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		3025DCC821C1C362006DA045 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		DF6DB35221B67D4C0085CF11 /* FinalProjectWatch_PROG31975.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinalProjectWatch_PROG31975.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF6DB35521B67D4C0085CF11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		DF6DB35721B67D4D0085CF11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -126,6 +130,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3025DCC921C1C362006DA045 /* CoreLocation.framework in Frameworks */,
+				3025DCC721C1C35A006DA045 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,6 +263,8 @@
 		DFD011F521B6348900922ED7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3025DCC821C1C362006DA045 /* CoreLocation.framework */,
+				3025DCC621C1C35A006DA045 /* MapKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
