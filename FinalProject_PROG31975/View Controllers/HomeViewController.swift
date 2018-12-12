@@ -81,6 +81,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableCell.lblReplies.text = "2 Replies"
         tableCell.lblTimestamp.text = rowObj.getPostedTime() as? String
         
+        
         //TODO: Finish displaying Post data.
         
         return tableCell
