@@ -40,7 +40,7 @@ class PeeksViewController: UIViewController, UITableViewDataSource, UITableViewD
                     
                     let p = Peek()
                     
-                    p.initWithData( message: i["message"] as! String, peekID: i["user"] as! String, peekedTime: i["time_posted"] as! String)
+                    p.initWithData( message: i["message"] as! String, peekID: i["user"] as! String, peekedTime: i["time_posted"] as! String, location: i["location" ] as! String)
                     peeks.append(p)
                     
                 }
@@ -48,6 +48,17 @@ class PeeksViewController: UIViewController, UITableViewDataSource, UITableViewD
                 self.timer.invalidate()
             }
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // Onclick handling.
+        
+        // Record selected Post to display in Replies page.
+        let mainDelegate = UIApplication.shared.delegate as! AppDelegate
+        mainDelegate.selectedPeek = peeks[indexPath.row]
+        
+        // Segue to Replies page.
+        performSegue(withIdentifier: "PeekAreaSegue", sender: nil)
     }
     
     @IBAction func findLocation(sender : UIBarButtonItem){
@@ -66,8 +77,11 @@ class PeeksViewController: UIViewController, UITableViewDataSource, UITableViewD
             
             if self.locTextField.text != "" {
                 
+                //let location = self.locTextField.text
+                self.refreshTable()
+                
             } else{
-                //Show message after trying to save without text
+                //
                 
             }
             
@@ -102,7 +116,7 @@ class PeeksViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         let row : Peek = peeks[indexPath.row]
         
-        tableCell.lblMessage.text = row.getMessage() as? String
+        tableCell.lblLocation.text = "Location: " + row.getLocation() as? String
         
         //placeholder
         return tableCell
