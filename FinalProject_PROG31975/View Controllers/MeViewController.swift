@@ -124,7 +124,7 @@ class MeViewController: UIViewController, MKMapViewDelegate, UITableViewDelegate
                     let post = Post()
                     
                     // Initialize the Post object with the data from the database
-                    post.initWithData(authorID: currPost["user"] as! String, message: currPost["message"] as! String, postedTime: currPost["time_posted"] as! String)
+                    post.initWithData(authorID: currPost["user"] as! String, message: currPost["message"] as! String, dateString: currPost["time_posted"] as! String)
                     
                     // Set the post ID
                     post.postID = currPost["id"] as? Int
@@ -169,7 +169,7 @@ class MeViewController: UIViewController, MKMapViewDelegate, UITableViewDelegate
                     let reply = Reply()
                     
                     // Initialize the Reply object with the data from the database
-                    reply.initWithData(authorID: currReply["user"] as! String, message: currReply["message"] as! String, postedTime: currReply["time_posted"] as! String)
+                    reply.initWithData(authorID: currReply["user"] as! String, message: currReply["message"] as! String, dateString: currReply["time_posted"] as! String)
                     
                     // Set the Reply ID
                     reply.postID = currReply["id"] as? Int
