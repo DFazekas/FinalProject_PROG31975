@@ -25,8 +25,8 @@
                                 <items>
                                     <navigationItem id="Ogi-LD-5rN">
                                         <nil key="title"/>
-                                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="bM9-bC-reZ">
-                                            <rect key="frame" x="77" y="7.5" width="221" height="29"/>
+                                        <segmentedControl key="titleView" opaque="NO" contentMode="center" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="bM9-bC-reZ">
+                                            <rect key="frame" x="146" y="7.5" width="83" height="29"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <segments>
@@ -465,7 +465,7 @@
         <scene sceneID="nol-cK-ion">
             <objects>
                 <viewController title="Settings" id="Dns-hu-Q0G" customClass="SettingsViewController" customModule="FinalProject_PROG31975" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" misplaced="YES" id="5yQ-z2-Ysb">
+                    <view key="view" contentMode="scaleToFill" id="5yQ-z2-Ysb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -796,7 +796,8 @@
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="Peeks" id="iyU-Jf-zDZ">
-                                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="fJy-H9-661">
+                                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="search" id="fJy-H9-661">
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <connections>
                                                 <action selector="findLocationWithSender:" destination="fmf-9K-Chd" id="lAu-ra-gKq"/>
                                             </connections>

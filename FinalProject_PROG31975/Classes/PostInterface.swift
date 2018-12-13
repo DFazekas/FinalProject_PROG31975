@@ -17,14 +17,16 @@ class PostInterface : NSObject {
     public var allVotes : Int? // Sum of votes displayed.
     private var myVote : Int? // Displayed user vote.
     private var postedTime : String? // Displayed timestamp (e.g., 26m, 3h, 4d, 2y).
+    private var dateTime : Date? // Posted date (e.g., 2018-12-13 03:55:49 +0000).
     
-    func initWithData(authorID:String, message:String, postedTime:String) {
+    func initWithData(authorID:String, message:String, dateString:String) {
         // Constructor.
         
         self.postID = 0
         self.authorID = authorID
         self.message = message
-        self.postedTime = postedTime
+        self.dateTime = self.stringToDate(dateString: dateString)
+        self.postedTime = self.parseDateTime(dateTime: dateTime!)
     }
     
     func addVote(myVote: Int) {
@@ -34,7 +36,6 @@ class PostInterface : NSObject {
         //TODO: Update indicator UI.
         self.allVotes? += myVote
     }
-
     func getPostID() -> Int {
         return self.postID!
     }
@@ -50,8 +51,36 @@ class PostInterface : NSObject {
     func getMyVote() -> Int {
         return self.myVote!
     }
+    func getDateTime() -> Date {
+        return self.dateTime!
+    }
     func getPostedTime() -> String {
         return self.postedTime!
+    }
+    private func parseDateTime(dateTime:Date) -> String {
+        // Returns a timestamp in one of the following formats (2d, 6h, 24m, 50s).
+        var timeStamp : String = ""
+        
+        // Compute difference between Then and Now dates.
+        let seconds = Date().timeIntervalSince(dateTime)
+        
+        if seconds - 86400 > 0 { // Seconds in day.
+            timeStamp = "\(Int(seconds / 86400))d"
+        } else if seconds - 3600 > 0 { // Seconds in hour.
+            timeStamp = "\(Int(seconds / 3600))h"
+        } else if seconds - 60 > 0 { // Seconds in minute.
+            timeStamp = "\(Int(seconds / 60))m"
+        } else {
+            timeStamp = "\(Int(seconds))s"
+        }
+        return timeStamp
+    }
+    private func stringToDate(dateString:String) -> Date {
+        // Convert MySQL Date to Swift Date.
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        let thenDate = dateFormatter.date(from: dateString)
+        return thenDate!
     }
 }
 

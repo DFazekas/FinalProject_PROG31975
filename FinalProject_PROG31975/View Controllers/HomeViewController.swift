@@ -10,7 +10,6 @@ import UIKit
 
 class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-
     var posts : [Post] = [] // List of Posts to display.
     var timer : Timer!
     let getData = GetData()
@@ -25,25 +24,22 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
     }
     
-    // swift 4 update
     @objc func refreshTable(){
-        if(getData.dbData != nil)
-        {
-            if (getData.dbData?.count)! > 0
-            {
+        if (getData.dbData != nil) {
+            if (getData.dbData?.count)! > 0 {
                 posts = []
                 for i in getData.dbData!{
+                    let p = Post()
                     
-              
-                     let p = Post()
-         
-                    p.initWithData(authorID: i["user"] as! String, message: i["message"] as! String, postedTime: i["time_posted"] as! String)
+                    let then = i["time_posted"] as! String
+                    
+                    
+                    p.initWithData(authorID: i["user"] as! String, message: i["message"] as! String, dateString: then)
                     p.postID = i["id"] as? Int
                     let likes = (i["likes"] as? Int)
                     p.allVotes = likes ?? 0
                     
                     posts.append(p)
-                    
                 }
                 self.myTable.reloadData()
                 self.timer.invalidate()
@@ -97,16 +93,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     ///// Misc. content.
-    func initFakeData() {
-        let postObj = Post()
-        postObj.initWithData(authorID: "1023123", message: "Just realized that beef jerky is kinda like a cow raisin", postedTime: "11-08-2018 17:56")
-        posts.append(postObj)
-        
-        let postObj2 = Post()
-        postObj2.initWithData(authorID: "1223423", message: "That awkward moment when you're in the bathroom stall and you make eye contact with the person checking to see if the stall is empty", postedTime: "11-08-2018 17:56")
-        posts.append(postObj2)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         

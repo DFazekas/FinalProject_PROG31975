@@ -124,11 +124,8 @@ class GetData: NSObject {
         
         URLSession.shared.dataTask(with: request) { (data, response, error) in
             do {
-                
                 let datastring = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
                 print(datastring!)
-                
-                
                 
                 guard let data = data else {
                     throw JSONError.NoData
