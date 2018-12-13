@@ -24,6 +24,8 @@
 		00B78D68219CB3DE00157530 /* RepliesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B78D67219CB3DE00157530 /* RepliesViewController.swift */; };
 		00B78D6A219CC2F900157530 /* ReplyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B78D69219CC2F900157530 /* ReplyTableViewCell.swift */; };
 		232AE8572194A76A00D60E86 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232AE8562194A76A00D60E86 /* PostTableViewCell.swift */; };
+		3025DCC721C1C35A006DA045 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3025DCC621C1C35A006DA045 /* MapKit.framework */; };
+		3025DCC921C1C362006DA045 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3025DCC821C1C362006DA045 /* CoreLocation.framework */; };
 		DF6DB35621B67D4C0085CF11 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF6DB35421B67D4C0085CF11 /* Interface.storyboard */; };
 		DF6DB35821B67D4D0085CF11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF6DB35721B67D4D0085CF11 /* Assets.xcassets */; };
 		DF6DB35F21B67D4D0085CF11 /* FinalProjectWatch_PROG31975 Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = DF6DB35E21B67D4D0085CF11 /* FinalProjectWatch_PROG31975 Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -33,6 +35,9 @@
 		DF6DB36A21B67D4F0085CF11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF6DB36921B67D4F0085CF11 /* Assets.xcassets */; };
 		DF6DB36F21B67D4F0085CF11 /* FinalProjectWatch_PROG31975.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = DF6DB35221B67D4C0085CF11 /* FinalProjectWatch_PROG31975.app */; };
 		DF95725F21C1BFDA0036120D /* GetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF95725E21C1BFDA0036120D /* GetData.swift */; };
+		DF95726121C1D0020036120D /* PeekInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF95726021C1D0020036120D /* PeekInterface.swift */; };
+		DF95726321C1D0780036120D /* Peek.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF95726221C1D0780036120D /* Peek.swift */; };
+		DF95726521C1D52E0036120D /* PeekReply.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF95726421C1D52E0036120D /* PeekReply.swift */; };
 		DFD0116821B629E900922ED7 /* Locations.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD0116721B629E900922ED7 /* Locations.swift */; };
 		DFD0116A21B62CC500922ED7 /* PeekCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD0116921B62CC500922ED7 /* PeekCell.swift */; };
 /* End PBXBuildFile section */
@@ -99,6 +104,8 @@
 		00B78D67219CB3DE00157530 /* RepliesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepliesViewController.swift; sourceTree = "<group>"; };
 		00B78D69219CC2F900157530 /* ReplyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplyTableViewCell.swift; sourceTree = "<group>"; };
 		232AE8562194A76A00D60E86 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		3025DCC621C1C35A006DA045 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		3025DCC821C1C362006DA045 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		DF6DB35221B67D4C0085CF11 /* FinalProjectWatch_PROG31975.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinalProjectWatch_PROG31975.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF6DB35521B67D4C0085CF11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		DF6DB35721B67D4D0085CF11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -111,6 +118,9 @@
 		DF6DB36B21B67D4F0085CF11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DF6DB36C21B67D4F0085CF11 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		DF95725E21C1BFDA0036120D /* GetData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetData.swift; sourceTree = "<group>"; };
+		DF95726021C1D0020036120D /* PeekInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeekInterface.swift; sourceTree = "<group>"; };
+		DF95726221C1D0780036120D /* Peek.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Peek.swift; sourceTree = "<group>"; };
+		DF95726421C1D52E0036120D /* PeekReply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeekReply.swift; sourceTree = "<group>"; };
 		DFD0116721B629E900922ED7 /* Locations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Locations.swift; sourceTree = "<group>"; };
 		DFD0116921B62CC500922ED7 /* PeekCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeekCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -120,6 +130,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3025DCC921C1C362006DA045 /* CoreLocation.framework in Frameworks */,
+				3025DCC721C1C35A006DA045 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,6 +216,9 @@
 				00B78CD4218CD2E400157530 /* User.swift */,
 				DFD0116721B629E900922ED7 /* Locations.swift */,
 				DFD0116921B62CC500922ED7 /* PeekCell.swift */,
+				DF95726021C1D0020036120D /* PeekInterface.swift */,
+				DF95726221C1D0780036120D /* Peek.swift */,
+				DF95726421C1D52E0036120D /* PeekReply.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -248,6 +263,8 @@
 		DFD011F521B6348900922ED7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3025DCC821C1C362006DA045 /* CoreLocation.framework */,
+				3025DCC621C1C35A006DA045 /* MapKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -393,13 +410,16 @@
 				00B78D64219CA54C00157530 /* MoreViewController.swift in Sources */,
 				00B78CDB2193F92F00157530 /* PostViewController.swift in Sources */,
 				DF95725F21C1BFDA0036120D /* GetData.swift in Sources */,
+				DF95726321C1D0780036120D /* Peek.swift in Sources */,
 				232AE8572194A76A00D60E86 /* PostTableViewCell.swift in Sources */,
 				00B78CBE2187CDEC00157530 /* HomeViewController.swift in Sources */,
 				00B78CD3218CD05900157530 /* Post.swift in Sources */,
 				00B78CBC2187CDEC00157530 /* AppDelegate.swift in Sources */,
 				00B78CD9218D32AE00157530 /* PostInterface.swift in Sources */,
+				DF95726521C1D52E0036120D /* PeekReply.swift in Sources */,
 				00B78D68219CB3DE00157530 /* RepliesViewController.swift in Sources */,
 				DFD0116A21B62CC500922ED7 /* PeekCell.swift in Sources */,
+				DF95726121C1D0020036120D /* PeekInterface.swift in Sources */,
 				00B78D66219CA68800157530 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

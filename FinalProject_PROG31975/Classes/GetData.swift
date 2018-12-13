@@ -25,6 +25,12 @@ class GetData: NSObject {
         
     }
     
+    func getPeeks(){
+        self.myUrl = "http://markbeauchamp.ca:5000/api/posts" as String
+        jsonParser()
+        
+    }
+    
     
     
     
