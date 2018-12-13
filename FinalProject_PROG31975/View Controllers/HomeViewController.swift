@@ -38,6 +38,10 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                      let p = Post()
          
                     p.initWithData(authorID: i["user"] as! String, message: i["message"] as! String, postedTime: i["time_posted"] as! String)
+                    p.postID = i["id"] as? Int
+                    let likes = (i["likes"] as? Int)
+                    p.allVotes = likes ?? 0
+                    
                     posts.append(p)
                     
                 }
@@ -76,8 +80,9 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         let likes = 0
         
+        tableCell.post = rowObj
         tableCell.lblMessage.text = rowObj.getMessage() as? String
-        tableCell.lblRating.text = String(likes)
+        tableCell.lblRating.text = String(rowObj.allVotes!)
         tableCell.lblReplies.text = "2 Replies"
         tableCell.lblTimestamp.text = rowObj.getPostedTime() as? String
         

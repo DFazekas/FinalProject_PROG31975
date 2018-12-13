@@ -16,6 +16,10 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet var lblRating : UILabel!      // Displays the rating of the post.
     @IBOutlet var btnUpvote : UIButton!     // Button for upvoting the post.
     @IBOutlet var btnDownvote : UIButton!   // Button for downvoting the post.
+    public var post : Post!
+     let getData = GetData()
+    var timer : Timer!
+
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,18 +29,34 @@ class PostTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
 
+    @objc func refreshTable(){
+        if(getData.dbData != nil)
+        {
+            
+              
+            lblRating.text = String(getData.dbData![0]["likes"] as! Int)
+                    
+            
+            
+                self.timer.invalidate()
+            }
+        }
+    
+    
     @IBAction func vote(sender : UIButton) {
         // Handles voting. Post scores are public and affect the OP.
         //TODO: Implement voting functionality.
         
-        // Vote is +1 for Up votes, else -1 doe Down votes.
-        let vote = (sender.accessibilityLabel == "up_vote") ? 1 : -1
+       
         
+        let vote = (sender.accessibilityLabel == "down_vote") ? 0 : 1
+         self.timer = Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: #selector(self.refreshTable), userInfo: nil, repeats: true);
+        getData.like(positive: vote, post: post.postID!)
         // Get current rate from label (not ideal).
-        let currentRate : Int = Int(lblRating.text!)!
+       //let currentRate : Int = Int(lblRating.text!)!
         
         // Update label.
-        lblRating.text = String(currentRate + vote)
+       // lblRating.text = String(currentRate + vote)
     }
     
 }
