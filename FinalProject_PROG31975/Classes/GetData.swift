@@ -75,10 +75,8 @@ class GetData: NSObject {
     
     
     
-    func like(positive:Int,post:Int){
-        
-        
-        
+    func like(positive:Int, post:Int){
+        // Handles voting functionality.
         var url = "http://markbeauchamp.ca:5000/api/like" as String
         guard let endpoint = URL(string: url) else {
             print("Error creating endpoint")

@@ -215,6 +215,7 @@
 				00B78CD8218D32AE00157530 /* PostInterface.swift */,
 				232AE8562194A76A00D60E86 /* PostTableViewCell.swift */,
 				00B78D69219CC2F900157530 /* ReplyTableViewCell.swift */,
+				DF95726821C1E6190036120D /* LocationPeekTableViewCell.swift */,
 				00B78CD2218CD05900157530 /* Post.swift */,
 				00B78CD6218CD68E00157530 /* Reply.swift */,
 				00B78CD4218CD2E400157530 /* User.swift */,
@@ -223,7 +224,6 @@
 				DF95726021C1D0020036120D /* PeekInterface.swift */,
 				DF95726221C1D0780036120D /* Peek.swift */,
 				DF95726421C1D52E0036120D /* PeekReply.swift */,
-				DF95726821C1E6190036120D /* LocationPeekTableViewCell.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";

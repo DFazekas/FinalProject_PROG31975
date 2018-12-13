@@ -20,8 +20,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         self.timer = Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: #selector(self.refreshTable), userInfo: nil, repeats: true);
         
         getData.getPosts()
-        
-        
     }
     
     @objc func refreshTable(){
@@ -97,11 +95,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Load fake default data.
-        //initFakeData()
-        
-        // Setup Navigation Bar.
-        //setupNavigationBarItems()
+        myTable.separatorStyle = UITableViewCellSeparatorStyle.singleLine
+        myTable.separatorColor = UIColor.darkGray
     }
     
     override func didReceiveMemoryWarning() {
