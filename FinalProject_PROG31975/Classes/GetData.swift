@@ -2,8 +2,8 @@
 //  GetData.swift
 //  Assignment4
 //
-//  Created by Devon Fazekas, Mark Philips, Mark Beauchamp, Justine Manikan on 11/29/18.
-//  Copyright © 2018 Justine Manikankan. All rights reserved.
+//  Created by Justine Manikan on 11/29/18.
+//  Copyright © 2018 Justine Manikan. All rights reserved.
 //
 
 import UIKit

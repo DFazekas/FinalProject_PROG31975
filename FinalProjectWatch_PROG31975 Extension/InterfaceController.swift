@@ -2,7 +2,7 @@
 //  InterfaceController.swift
 //  FinalProjectWatch_PROG31975 Extension
 //
-//  Created by Devon Fazekas, Mark Philips, Mark Beauchamp, Justine Manikan on 2018-12-04.
+//  Created by Justine Manikan on 2018-12-04.
 //  Copyright © 2018 PROG31975. All rights reserved.
 //
 
