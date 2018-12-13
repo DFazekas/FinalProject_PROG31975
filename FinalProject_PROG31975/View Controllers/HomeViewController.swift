@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  FinalProject_PROG31975
 //
-//  Created by Devon on 2018-10-29.
+//  Created by Mark Beauchamp on 2018-10-29.
 //  Copyright © 2018 PROG31975. All rights reserved.
 //
 

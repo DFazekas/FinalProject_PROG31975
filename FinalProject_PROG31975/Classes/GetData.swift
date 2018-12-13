@@ -2,7 +2,7 @@
 //  GetData.swift
 //  Assignment4
 //
-//  Created by Justine Manikan on 11/29/18.
+//  Created by Mark Beauchamp on 11/29/18.
 //  Copyright © 2018 Justine Manikan. All rights reserved.
 //
 
