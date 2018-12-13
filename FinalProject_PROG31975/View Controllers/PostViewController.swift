@@ -11,12 +11,22 @@ import UIKit
 class PostViewController: UIViewController {
 
     @IBOutlet var textView : UITextView!
-    
+    var getData = GetData()
+       var timer : Timer!
     
     @IBAction func submitPost(){
+        self.timer = Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: #selector(self.refreshTable), userInfo: nil, repeats: true);
+        getData.sendPost(message: textView.text, location: "43.469147,-79.698683")
         
-        
-        
+    }
+    
+    @objc func refreshTable(){
+        if(getData.dbData != nil)
+        {
+          
+                self.timer.invalidate()
+            
+        }
     }
     
     ///// Misc. content.

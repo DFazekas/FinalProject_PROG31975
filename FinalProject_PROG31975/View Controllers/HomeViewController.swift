@@ -54,14 +54,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     ///// TableView content.
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // How many Posts to display.
-        if getData.dbData != nil
-        {
-            return (getData.dbData?.count)!
-        }
-        else
-        {
-            return 0
-        }
+       return posts.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -118,7 +111,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         super.viewDidLoad()
         
         // Load fake default data.
-        initFakeData()
+        //initFakeData()
         
         // Setup Navigation Bar.
         //setupNavigationBarItems()
