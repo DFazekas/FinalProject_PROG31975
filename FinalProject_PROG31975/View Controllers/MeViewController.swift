@@ -17,7 +17,12 @@ class MeViewController: UIViewController, MKMapViewDelegate, UITableViewDelegate
     @IBOutlet var contentTable : UITableView!
     
     @IBAction func contentToggleTriggered(sender : UISegmentedControl) {
-        //
+        // Check the UISegmentedControl's currently enabled state
+        if (sender.selectedSegmentIndex == 0) { // My Posts
+            
+        } else { // My Replies
+            
+        }
     }
     
     // Declare & initialize user location and region radius
