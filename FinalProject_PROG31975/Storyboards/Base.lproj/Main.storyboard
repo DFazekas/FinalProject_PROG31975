@@ -455,6 +455,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Me" image="icon_me" selectedImage="icon_me" id="zY7-UY-i6h"/>
                     <connections>
+                        <outlet property="contentTable" destination="EKi-cz-rDY" id="Gkq-Ih-4Xd"/>
                         <outlet property="swContentToggle" destination="0JQ-in-Va7" id="cx0-hF-Inu"/>
                         <outlet property="userMapView" destination="R6f-UO-FjS" id="F7P-O9-C9W"/>
                     </connections>
