@@ -9,11 +9,23 @@
 import UIKit
 
 class SettingsViewController: UIViewController {
-
+    // Declare & initialize all required @IBOutlet variables
+    @IBOutlet var swEnableNotifications : UISwitch!
+    @IBOutlet var swEnableEmails : UISwitch!
     
-    ///// Misc. content.
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    @IBAction func enableEmailNotificationsToggled(sender : UISwitch) {
+        if (sender.isOn) {
+            let alertController = UIAlertController(title: "Email Notifications", message: "Email Notifications have been enabled!", preferredStyle: .alert)
+            let confirmAction = UIAlertAction(title: "Okay", style: .cancel, handler: nil)
+            
+            alertController.addAction(confirmAction)
+            
+            present(alertController, animated: true)
+        }
     }
 
     override func didReceiveMemoryWarning() {
