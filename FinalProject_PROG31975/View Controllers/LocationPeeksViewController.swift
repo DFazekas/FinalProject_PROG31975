@@ -10,16 +10,50 @@ import UIKit
 
 class LocationPeeksViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-    var peek : Peek? = nil
-    var preplies : [PeekReply] = []
+    var posts : [Post] = [] // List of Posts to display.
+    var timer : Timer!
+    var lastMessage : CFAbsoluteTime = 0 // Watch message.
+    let getData = GetData()
+    @IBOutlet var peekTable : UITableView!
     
-    @IBOutlet var message : UILabel!
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.timer = Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: #selector(self.refreshTable), userInfo: nil, repeats: true);
+        
+        getData.getPosts()
+    }
+    @objc func refreshTable(){
+        if (getData.dbData != nil) {
+            if (getData.dbData?.count)! > 0 {
+                print("Only just now refreshing table")
+                posts = []
+                for i in getData.dbData!{
+                    let p = Post()
+                    
+                    let then = i["time_posted"] as! String
+                    
+                    
+                    p.initWithData(authorID: i["user"] as! String, message: i["message"] as! String, dateString: then)
+                    p.postID = i["id"] as? Int
+                    let likes = (i["likes"] as? Int)
+                    p.allVotes = likes ?? 0
+                    p.numberOfReplies = i["replies"] as? Int
+                    
+                    posts.append(p)
+                }
+                self.peekTable.reloadData()
+                self.timer.invalidate()
+            }
+            
+            
+        }
+    }
     
     // TableView content.
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // How many Peeks to display.
-        return self.preplies.count
+        return posts.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -28,17 +62,27 @@ class LocationPeeksViewController: UIViewController, UITableViewDataSource, UITa
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // Displays cells.
+        /// Displays cells.
         
         // Obtain or create new cell.
-        let tableCell : LocationPeekTableViewCell = tableView.dequeueReusableCell(withIdentifier: "LocationPeekCell") as? LocationPeekTableViewCell ?? LocationPeekTableViewCell(style: .default, reuseIdentifier: "LocationPeekCell")
+        let tableCell : PostTableViewCell = tableView.dequeueReusableCell(withIdentifier: "LocationPeekCell") as? PostTableViewCell ?? PostTableViewCell(style: .default, reuseIdentifier: "LocationPeekCell")
         
-        // Obtain Peek to display.
-        let row : PeekReply = preplies[indexPath.row]
+        // Obtain Post to display.
+        let rowObj : Post = posts[indexPath.row]
         
-        tableCell.lblMessage.text = row.getMessage()
-        tableCell.lblRating.text = "101"
-        tableCell.lblTimestamp.text = "1h"
+        let likes = 0
+        
+        tableCell.post = rowObj
+        tableCell.lblMessage.text = rowObj.getMessage() as? String
+        tableCell.lblRating.text = String(rowObj.allVotes!)
+        tableCell.lblReplies.text = String(rowObj.numberOfReplies!) + " Replies"
+        tableCell.lblTimestamp.text = rowObj.getPostedTime() as? String
+        
+        if rowObj.allVotes! < 0 {
+            tableCell.lblRating.textColor = .red
+        } else {
+            tableCell.lblRating.textColor = .black
+        }
         
         //TODO: Finish displaying Post data.
         
@@ -49,24 +93,10 @@ class LocationPeeksViewController: UIViewController, UITableViewDataSource, UITa
     ///// Misc. content.
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let mainDelegate = UIApplication.shared.delegate as! AppDelegate
-        self.peek = mainDelegate.selectedPeek
-        self.message.text = mainDelegate.selectedPeek?.getMessage()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
