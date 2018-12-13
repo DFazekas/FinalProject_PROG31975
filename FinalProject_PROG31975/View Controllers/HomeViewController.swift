@@ -107,6 +107,11 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableCell.lblReplies.text = String(rowObj.numberOfReplies!) + " Replies"
         tableCell.lblTimestamp.text = rowObj.getPostedTime() as? String
         
+        if rowObj.allVotes! < 0 {
+            tableCell.lblRating.textColor = .red
+        } else {
+            tableCell.lblRating.textColor = .black
+        }
         
         //TODO: Finish displaying Post data.
         
