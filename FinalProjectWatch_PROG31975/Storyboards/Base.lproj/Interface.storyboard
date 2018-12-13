@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14109" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14031"/>
+    </dependencies>
+    <scenes>
+        <!--Home Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="HomeInterfaceController" customModule="FinalProjectWatch_PROG31975_Extension">
+                    <items>
+                        <table alignment="left" id="pFG-hc-u4Z">
+                            <items>
+                                <tableRow identifier="PostRowController" id="ZZD-qp-HF9" customClass="PostRowController" customModule="FinalProjectWatch_PROG31975_Extension">
+                                    <group key="rootItem" width="1" height="71" alignment="left" id="88H-Bt-GxR">
+                                        <items>
+                                            <group width="81" height="76" alignment="left" layout="vertical" id="iNR-ES-UvS">
+                                                <items>
+                                                    <label alignment="left" text="Message" id="QVq-af-yLa">
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="font" type="system" pointSize="14"/>
+                                                    </label>
+                                                    <label alignment="left" verticalAlignment="bottom" text="Vote" id="4Qj-ut-m2Q">
+                                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="font" type="system" pointSize="12"/>
+                                                    </label>
+                                                </items>
+                                            </group>
+                                            <group width="1" alignment="left" layout="vertical" id="21m-mr-AnU">
+                                                <items>
+                                                    <button width="40" height="30" alignment="left" title="+" id="LTd-DE-a03"/>
+                                                    <button width="40" height="30" alignment="left" title="-" id="lkI-Dh-T84"/>
+                                                </items>
+                                            </group>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="btnDownvote" destination="lkI-Dh-T84" id="5V0-c1-0EN"/>
+                                        <outlet property="btnUpvote" destination="LTd-DE-a03" id="k5x-y0-ps5"/>
+                                        <outlet property="lblMessage" destination="QVq-af-yLa" id="gwT-1y-UNp"/>
+                                        <outlet property="lblRating" destination="4Qj-ut-m2Q" id="6rQ-dQ-uey"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    <connections>
+                        <outlet property="postTable" destination="pFG-hc-u4Z" id="3tf-Ez-EN5"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="220" y="345"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" id="IdU-wH-bcW"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
+                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="220" y="643"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="ZPc-GJ-vnh">
+            <objects>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="FinalProjectWatch_PROG31975" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="468" y="643"/>
+        </scene>
+    </scenes>
+</document>

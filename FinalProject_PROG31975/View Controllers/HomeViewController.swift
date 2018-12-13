@@ -7,13 +7,21 @@
 //
 
 import UIKit
+import WatchConnectivity
 
-class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, WCSessionDelegate {
 
     var posts : [Post] = [] // List of Posts to display.
     var timer : Timer!
+    var lastMessage : CFAbsoluteTime = 0 // Watch message.
     let getData = GetData()
     @IBOutlet var myTable : UITableView!
+    
+    func initFakeData() {
+        let post = Post()
+        post.initWithData(authorID: "2", message: "Hello, world", dateTime: Date())
+        posts.append(post)
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -25,6 +33,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @objc func refreshTable(){
         if (getData.dbData != nil) {
             if (getData.dbData?.count)! > 0 {
+                print("Only just now refreshing table")
                 posts = []
                 for i in getData.dbData!{
                     let p = Post()
@@ -42,7 +51,31 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 }
                 self.myTable.reloadData()
                 self.timer.invalidate()
+                
+                // Watch.
+                print("Posts.count: \(self.posts.count)")
+                print("Is WCSession supported?")
+                if (WCSession.isSupported()) {
+                    let session = WCSession.default
+                    session.delegate = self
+                    session.activate()
+                    if session.isPaired != true {
+                        print("Apple Watch is not paired")
+                    }
+                    print("Apple watch IS paired")
+                    if session.isWatchAppInstalled != true {
+                        print("WatchKi app is not installed")
+                    }
+                    print("Watch IS installed")
+                } else {
+                    print("WatchConnectivity is not supported on this device")
+                }
+                let postData = NSKeyedArchiver.archivedData(withRootObject: posts)
+                print("sendWatchMessage")
+                sendWatchMessage(postData)
             }
+            
+            
         }
     }
     
@@ -91,12 +124,41 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         performSegue(withIdentifier: "ViewRepliesSegue", sender: nil)
     }
     
+    ///// Watch content.
+    func sendWatchMessage(_ msgData:Data) {
+        let currentTime = CFAbsoluteTimeGetCurrent()
+        if lastMessage + 0.5 > currentTime {
+            return
+        }
+        
+        if WCSession.default.isReachable {
+            let message = ["postData" : msgData]
+            WCSession.default.sendMessage(message, replyHandler: nil)
+        }
+        lastMessage = CFAbsoluteTimeGetCurrent()
+    }
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) { }
+    func sessionDidBecomeInactive(_ session: WCSession) { }
+    func sessionDidDeactivate(_ session: WCSession) { }
+    func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
+        var replyValues = Dictionary<String, AnyObject>()
+        if message["getPostData"] != nil {
+            NSKeyedArchiver.setClassName("Post", for: Post.self)
+            let postData = NSKeyedArchiver.archivedData(withRootObject: posts)
+            replyValues["postData"] = postData as AnyObject?
+            replyHandler(replyValues)
+        }
+    }
+    
     ///// Misc. content.
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Adjust tableView cell separator style.
         myTable.separatorStyle = UITableViewCellSeparatorStyle.singleLine
         myTable.separatorColor = UIColor.darkGray
+        
+        
     }
     
     override func didReceiveMemoryWarning() {

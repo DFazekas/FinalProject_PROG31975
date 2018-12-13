@@ -12,7 +12,7 @@ class PostInterface : NSObject {
     // Post contains data of the ananomous, public post.
     
     public var postID : Int? // The identifier of the post.
-    private var authorID : String? // Identifier of the original poster.
+    public var authorID : String? // Identifier of the original poster.
     private var message : String? // The displayed message.
     public var allVotes : Int? // Sum of votes displayed.
     private var myVote : Int? // Displayed user vote.
@@ -21,14 +21,22 @@ class PostInterface : NSObject {
     
     func initWithData(authorID:String, message:String, dateString:String) {
         // Constructor.
-        
         self.postID = 0
         self.authorID = authorID
         self.message = message
+        self.myVote = 0
         self.dateTime = self.stringToDate(dateString: dateString)
         self.postedTime = self.parseDateTime(dateTime: dateTime!)
     }
-    
+    func initWithData(authorID:String, message:String, dateTime:Date) {
+        // Constructor.
+        self.postID = 0
+        self.authorID = authorID
+        self.message = message
+        self.myVote = 0
+        self.dateTime = dateTime
+        self.postedTime = self.parseDateTime(dateTime: dateTime)
+    }
     func addVote(myVote: Int) {
         // Update sum of votes for Post.
         
@@ -42,7 +50,7 @@ class PostInterface : NSObject {
     func getAuthorID() -> String {
         return self.authorID!
     }
-    func getMessage() -> String {
+    public func getMessage() -> String {
         return self.message!
     }
     func getAllVotes() -> Int {
