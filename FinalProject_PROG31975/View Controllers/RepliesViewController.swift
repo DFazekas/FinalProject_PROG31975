@@ -56,7 +56,7 @@ class RepliesViewController: UIViewController, UITableViewDataSource, UITableVie
                     
                     let p = Reply()
                     
-                    p.initWithData(authorID: i["user"] as! String, message: i["message"] as! String, postedTime: i["time_posted"] as! String)
+                    p.initWithData(authorID: i["user"] as! String, message: i["message"] as! String, dateString: i["time_posted"] as! String)
                     p.postID = i["id"] as? Int
                     let likes = (i["likes"] as? Int)
                     p.allVotes = likes ?? 0

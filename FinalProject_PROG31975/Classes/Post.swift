@@ -14,12 +14,12 @@ class Post : PostInterface {
     public var numberOfReplies : Int? // Displayed sum of replies for this post.
     private var allReplies = Array<Reply>() // Historic list of all replies associated with this post.
 
-    override func initWithData(authorID:String, message:String, postedTime:String) {
+    override func initWithData(authorID:String, message:String, dateString:String) {
         // Constructor - calls parent constructor.
-        
-        super.initWithData(authorID: authorID, message: message, postedTime: postedTime)
+        super.initWithData(authorID: authorID, message: message, dateString: dateString)
     }
 
+    
     func addReply(reply:Reply) {
         // Appends a new Reply to the Post's list of Replies.
         
