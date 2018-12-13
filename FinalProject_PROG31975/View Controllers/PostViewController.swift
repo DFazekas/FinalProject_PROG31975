@@ -8,11 +8,11 @@
 
 import UIKit
 
-class PostViewController: UIViewController {
+class PostViewController: UIViewController, UITextViewDelegate {
 
     @IBOutlet var textView : UITextView!
     var getData = GetData()
-       var timer : Timer!
+    var timer : Timer!
     
     @IBAction func submitPost(){
         self.timer = Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: #selector(self.refreshTable), userInfo: nil, repeats: true);
@@ -29,9 +29,21 @@ class PostViewController: UIViewController {
         }
     }
     
+    ///// TextView content.
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        // Remove placeholder.
+        textView.text = ""
+        if textView.textColor == UIColor.lightGray {
+            textView.text = nil
+            textView.textColor = UIColor.black
+        }
+    }
+    
     ///// Misc. content.
     override func viewDidLoad() {
         super.viewDidLoad()
+        textView.text = "What's on your mind?"
+        textView.textColor = UIColor.lightGray
     }
 
     override func didReceiveMemoryWarning() {
