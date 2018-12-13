@@ -2,11 +2,11 @@
 //  PeeksViewController.swift
 //  FinalProject_PROG31975
 //
-//  Created by Justine on 2018-12-3.
+//  Created by Devon Fazekas, Mark Philips, Mark Beauchamp, Justine Manikan on 2018-12-3.
 //  Copyright © 2018 PROG31975. All rights reserved.
 //
 
-//Justine Manikan
+//Justine Manikankan
 //December 3rd, 2018
 
 import UIKit
