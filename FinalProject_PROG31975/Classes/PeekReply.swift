@@ -14,10 +14,10 @@ class PeekReply : PeekInterface {
     
     private var avatarColor : String? // Displayed color representating the User.
     
-    override func initWithData(message: String, peekID:String, peekedTime:String) {
+    override func initWithData(message: String, peekID:String, peekedTime:String, location: String) {
         // Constructor - calls parent constructor.
         
-        super.initWithData(message: message, peekID: peekID, peekedTime: peekedTime)
+        super.initWithData(message: message, peekID: peekID, peekedTime: peekedTime, location: location)
         
     }
     

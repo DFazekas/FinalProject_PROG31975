@@ -15,20 +15,22 @@ class PeekInterface: NSObject {
     private var message : String?
     private var peekID : Int?
     private var peekedTime : String?
+    private var location : String?
    
     
-    func initWithData( message:String, peekID: String, peekedTime:String) {
+    func initWithData( message:String, peekID: String, peekedTime:String, location:String) {
     // Constructor.
         
         self.message = message
         self.peekID = 0
         self.peekedTime = peekedTime
+        self.location = location
     }
     
     //Click on table cell
-    func getLocation(myVote: Int) {
+    func getLocation() -> String {
     //
-    
+        return self.location!
     }
     
     func getMessage() -> String {

@@ -13,6 +13,7 @@ class PeekCell: UITableViewCell {
     
     //Must be able to click cell
     @IBOutlet var lblMessage : UILabel!
+    @IBOutlet var lblLocation : UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

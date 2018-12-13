@@ -14,20 +14,15 @@ class Peek: PeekInterface {
     private var numberOfReplies : Int?
     private var allReplies = Array<PeekReply>()
     
-    override func initWithData(message: String, peekID:String, peekedTime:String) {
+    override func initWithData(message: String, peekID:String, peekedTime:String, location: String) {
         
         // Constructor - calls parent constructor.
         
-        super.initWithData(message: message, peekID: peekID, peekedTime: peekedTime)
+        super.initWithData(message: message, peekID: peekID, peekedTime: peekedTime, location: location)
     }
     
     func addReply(preply:  PeekReply){
         self.allReplies.append(preply)
-    }
-    func getLocation() -> String {
-        // Return the posted location.
-        
-        return "Fake location"
     }
     
 }

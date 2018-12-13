@@ -38,6 +38,8 @@
 		DF95726121C1D0020036120D /* PeekInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF95726021C1D0020036120D /* PeekInterface.swift */; };
 		DF95726321C1D0780036120D /* Peek.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF95726221C1D0780036120D /* Peek.swift */; };
 		DF95726521C1D52E0036120D /* PeekReply.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF95726421C1D52E0036120D /* PeekReply.swift */; };
+		DF95726721C1E56C0036120D /* LocationPeeksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF95726621C1E56C0036120D /* LocationPeeksViewController.swift */; };
+		DF95726921C1E6190036120D /* LocationPeekTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF95726821C1E6190036120D /* LocationPeekTableViewCell.swift */; };
 		DFD0116821B629E900922ED7 /* Locations.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD0116721B629E900922ED7 /* Locations.swift */; };
 		DFD0116A21B62CC500922ED7 /* PeekCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD0116921B62CC500922ED7 /* PeekCell.swift */; };
 /* End PBXBuildFile section */
@@ -121,6 +123,8 @@
 		DF95726021C1D0020036120D /* PeekInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeekInterface.swift; sourceTree = "<group>"; };
 		DF95726221C1D0780036120D /* Peek.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Peek.swift; sourceTree = "<group>"; };
 		DF95726421C1D52E0036120D /* PeekReply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeekReply.swift; sourceTree = "<group>"; };
+		DF95726621C1E56C0036120D /* LocationPeeksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPeeksViewController.swift; sourceTree = "<group>"; };
+		DF95726821C1E6190036120D /* LocationPeekTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPeekTableViewCell.swift; sourceTree = "<group>"; };
 		DFD0116721B629E900922ED7 /* Locations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Locations.swift; sourceTree = "<group>"; };
 		DFD0116921B62CC500922ED7 /* PeekCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeekCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -219,6 +223,7 @@
 				DF95726021C1D0020036120D /* PeekInterface.swift */,
 				DF95726221C1D0780036120D /* Peek.swift */,
 				DF95726421C1D52E0036120D /* PeekReply.swift */,
+				DF95726821C1E6190036120D /* LocationPeekTableViewCell.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -233,6 +238,7 @@
 				00B78D61219CA53E00157530 /* PeeksViewController.swift */,
 				00B78D63219CA54C00157530 /* MoreViewController.swift */,
 				00B78D65219CA68800157530 /* SettingsViewController.swift */,
+				DF95726621C1E56C0036120D /* LocationPeeksViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -412,6 +418,7 @@
 				DF95725F21C1BFDA0036120D /* GetData.swift in Sources */,
 				DF95726321C1D0780036120D /* Peek.swift in Sources */,
 				232AE8572194A76A00D60E86 /* PostTableViewCell.swift in Sources */,
+				DF95726921C1E6190036120D /* LocationPeekTableViewCell.swift in Sources */,
 				00B78CBE2187CDEC00157530 /* HomeViewController.swift in Sources */,
 				00B78CD3218CD05900157530 /* Post.swift in Sources */,
 				00B78CBC2187CDEC00157530 /* AppDelegate.swift in Sources */,
@@ -420,6 +427,7 @@
 				00B78D68219CB3DE00157530 /* RepliesViewController.swift in Sources */,
 				DFD0116A21B62CC500922ED7 /* PeekCell.swift in Sources */,
 				DF95726121C1D0020036120D /* PeekInterface.swift in Sources */,
+				DF95726721C1E56C0036120D /* LocationPeeksViewController.swift in Sources */,
 				00B78D66219CA68800157530 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
