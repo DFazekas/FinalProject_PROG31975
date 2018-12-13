@@ -152,6 +152,56 @@ class GetData: NSObject {
         
     }
     
+    func sendPost(message:String, location:String){
+        
+        let url = "http://markbeauchamp.ca:5000/api/post" as String
+        guard let endpoint = URL(string: url) else {
+            print("Error creating endpoint")
+            return
+        }
+        
+        let json: [String: Any] = ["message": message,"location": location]
+        
+        let jsonData = try? JSONSerialization.data(withJSONObject: json)
+        
+        var request = URLRequest(url: endpoint)
+        request.httpMethod = "POST"
+        var headers = request.allHTTPHeaderFields ?? [:]
+        headers["Content-Type"] = "application/json"
+        request.allHTTPHeaderFields = headers
+        
+        request.httpBody = jsonData
+        
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            do {
+                
+                let datastring = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
+                print(datastring!)
+                
+                
+                
+                guard let data = data else {
+                    throw JSONError.NoData
+                }
+                
+                guard let json = try JSONSerialization.jsonObject(with: data, options: []) as? [NSDictionary] else {
+                    
+                    throw JSONError.ConversionFailed
+                    
+                }
+                print(json)
+                self.dbData = json
+                
+            } catch let error as JSONError {
+                print(error.rawValue)
+            } catch let error as NSError {
+                print(error.debugDescription)
+            }
+            }.resume()
+        
+        
+    }
+    
     func jsonParser() {
         
         
