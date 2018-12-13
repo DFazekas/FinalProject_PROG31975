@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RepliesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class RepliesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextViewDelegate {
 
     var post : Post? = nil
     var replies : [Reply] = []
@@ -23,6 +23,15 @@ class RepliesViewController: UIViewController, UITableViewDataSource, UITableVie
     @IBOutlet var reply : UITextView!
     @IBOutlet var lblReply : UILabel!
     
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        // Remove placeholder.
+        textView.text = ""
+        if textView.textColor == UIColor.lightGray {
+            textView.text = nil
+            textView.textColor = UIColor.black
+        }
+    }
     
     @IBAction func sendReply(){
         
