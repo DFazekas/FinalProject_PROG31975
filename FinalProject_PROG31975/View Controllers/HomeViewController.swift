@@ -41,6 +41,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                     p.postID = i["id"] as? Int
                     let likes = (i["likes"] as? Int)
                     p.allVotes = likes ?? 0
+                    p.numberOfReplies = i["replies"] as? Int
                     
                     posts.append(p)
                     
@@ -76,7 +77,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableCell.post = rowObj
         tableCell.lblMessage.text = rowObj.getMessage() as? String
         tableCell.lblRating.text = String(rowObj.allVotes!)
-        tableCell.lblReplies.text = "2 Replies"
+        tableCell.lblReplies.text = String(rowObj.numberOfReplies!) + " Replies"
         tableCell.lblTimestamp.text = rowObj.getPostedTime() as? String
         
         
