@@ -388,6 +388,7 @@
                     </view>
                     <connections>
                         <outlet property="lblLikes" destination="DyZ-KF-6BZ" id="gB5-8m-YhT"/>
+                        <outlet property="lblReply" destination="AFb-Xv-CAX" id="iUL-mw-47W"/>
                         <outlet property="message" destination="h4R-np-MqW" id="INy-4X-o3k"/>
                         <outlet property="myTable" destination="9tn-5H-3iL" id="p6P-25-bfA"/>
                         <outlet property="reply" destination="hIX-2N-3Lo" id="CQT-zo-j6i"/>

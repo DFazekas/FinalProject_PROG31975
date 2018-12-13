@@ -21,6 +21,7 @@ class RepliesViewController: UIViewController, UITableViewDataSource, UITableVie
     @IBOutlet var lblLikes : UILabel!
     @IBOutlet var message : UILabel!
     @IBOutlet var reply : UITextView!
+    @IBOutlet var lblReply : UILabel!
     
     
     @IBAction func sendReply(){
@@ -109,6 +110,7 @@ class RepliesViewController: UIViewController, UITableViewDataSource, UITableVie
         self.message.text = mainDelegate.selectedPost?.getMessage()
         self.lblLikes.text = String(self.post!.allVotes!);
         self.timer = Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: #selector(self.refreshTable), userInfo: nil, repeats: true);
+        self.lblReply.text = String(self.post!.numberOfReplies!) + " Replies"
         
         getData.getReplies(id:(self.post?.postID)!)
     }

@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FinalProject_PROG31975/View Controllers/HomeViewController.swift"
-            timestampString = "566373612.656301"
+            timestampString = "566411048.333877"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "78"
             endingLineNumber = "78"
-            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkName = "refreshTable()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
