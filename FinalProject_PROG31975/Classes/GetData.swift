@@ -25,6 +25,7 @@ class GetData: NSObject {
         
     }
     
+    
     func getPeeks(){
         self.myUrl = "http://markbeauchamp.ca:5000/api/posts" as String
         jsonParser()
@@ -32,7 +33,45 @@ class GetData: NSObject {
     }
     
     
+    func getReplies(id:Int){
     
+        let url = "http://markbeauchamp.ca:5000/api/replies?postId=\(id)"
+        guard let endpoint = URL(string: url) else {
+            print("Error creating endpoint")
+            return
+        }
+        
+        let request = URLRequest(url: endpoint)
+        
+        
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            do {
+                
+                let datastring = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
+                print(datastring!)
+                
+                
+                
+                guard let data = data else {
+                    throw JSONError.NoData
+                }
+                
+                guard let json = try JSONSerialization.jsonObject(with: data, options: []) as? [NSDictionary] else {
+                    
+                    throw JSONError.ConversionFailed
+                    
+                }
+                print(json)
+                self.dbData = json
+                
+            } catch let error as JSONError {
+                print(error.rawValue)
+            } catch let error as NSError {
+                print(error.debugDescription)
+            }
+            }.resume()
+        
+    }
     
     
     
@@ -101,6 +140,8 @@ class GetData: NSObject {
             }.resume()
         
     }
+    
+    
     
     func login(){
     
@@ -193,6 +234,36 @@ class GetData: NSObject {
                 print(error.rawValue)
             } catch let error as NSError {
                 print(error.debugDescription)
+            }
+            }.resume()
+        
+        
+    }
+    
+    func sendReply(message:String, postId:String){
+        
+        let url = "http://markbeauchamp.ca:5000/api/reply" as String
+        guard let endpoint = URL(string: url) else {
+            print("Error creating endpoint")
+            return
+        }
+        
+        let json: [String: Any] = ["message": message,"postId": postId]
+        
+        let jsonData = try? JSONSerialization.data(withJSONObject: json)
+        
+        var request = URLRequest(url: endpoint)
+        request.httpMethod = "POST"
+        var headers = request.allHTTPHeaderFields ?? [:]
+        headers["Content-Type"] = "application/json"
+        request.allHTTPHeaderFields = headers
+        
+        request.httpBody = jsonData
+        
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            do {
+                
+              self.dbData = []
             }
             }.resume()
         

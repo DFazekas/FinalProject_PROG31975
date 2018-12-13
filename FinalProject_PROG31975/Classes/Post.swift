@@ -11,7 +11,7 @@ import UIKit
 class Post : PostInterface {
     
     private var postedLocation : String? // Posted location used for radius calculation.
-    private var numberOfReplies : Int? // Displayed sum of replies for this post.
+    public var numberOfReplies : Int? // Displayed sum of replies for this post.
     private var allReplies = Array<Reply>() // Historic list of all replies associated with this post.
 
     override func initWithData(authorID:String, message:String, dateString:String) {
