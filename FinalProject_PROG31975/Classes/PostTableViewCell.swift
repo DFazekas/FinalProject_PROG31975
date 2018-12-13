@@ -49,7 +49,7 @@ class PostTableViewCell: UITableViewCell {
         
        
         
-        let vote = (sender.accessibilityLabel == "down_vote") ? 0 : 1
+        let vote = (sender.accessibilityLabel == "down_vote") ? -1 : 1
          self.timer = Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: #selector(self.refreshTable), userInfo: nil, repeats: true);
         getData.like(positive: vote, post: post.postID!)
         // Get current rate from label (not ideal).
