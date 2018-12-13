@@ -162,7 +162,7 @@
         <scene sceneID="SIx-ei-uEp">
             <objects>
                 <viewController id="bdi-Mp-12A" customClass="PostViewController" customModule="FinalProject_PROG31975" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="HnC-CB-qtO">
+                    <view key="view" contentMode="scaleToFill" misplaced="YES" id="HnC-CB-qtO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -183,6 +183,9 @@
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="1Xb-X0-AhV">
                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <connections>
+                                                <action selector="submitPost" destination="bdi-Mp-12A" id="gcz-pS-9na"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -199,6 +202,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="ZsS-ii-RK8"/>
                     </view>
+                    <connections>
+                        <outlet property="textView" destination="0ii-JA-16b" id="VWs-vx-0ct"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PHr-tA-FRo" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="WbB-G5-ks9" userLabel="Exit" sceneMemberID="exit"/>
@@ -464,7 +470,7 @@
         <scene sceneID="nol-cK-ion">
             <objects>
                 <viewController title="Settings" id="Dns-hu-Q0G" customClass="SettingsViewController" customModule="FinalProject_PROG31975" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="5yQ-z2-Ysb">
+                    <view key="view" contentMode="scaleToFill" misplaced="YES" id="5yQ-z2-Ysb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>

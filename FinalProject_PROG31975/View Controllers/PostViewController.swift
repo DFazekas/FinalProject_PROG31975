@@ -10,6 +10,14 @@ import UIKit
 
 class PostViewController: UIViewController {
 
+    @IBOutlet var textView : UITextView!
+    
+    
+    @IBAction func submitPost(){
+        
+        
+        
+    }
     
     ///// Misc. content.
     override func viewDidLoad() {
