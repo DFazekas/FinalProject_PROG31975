@@ -35,7 +35,9 @@ class MeViewController: UIViewController, MKMapViewDelegate, UITableViewDelegate
     
     // Declare & initialize user location and region radius
     let userLocation = CLLocation(latitude: 43.469147, longitude: -79.698683)
-    let regionRadius : CLLocationDistance = 1000
+    let regionRadius : CLLocationDistance = 100
+    let radius = 2500.0
+    var circleAlpha = 0.04 // Alpha of the circle overlay.
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -79,13 +81,12 @@ class MeViewController: UIViewController, MKMapViewDelegate, UITableViewDelegate
             let renderer = MKCircleRenderer(overlay: overlay)
             
             // Set the Bounded Circle Visual Properties
-            renderer.fillColor = UIColor.blue.withAlphaComponent(0.1)
+            renderer.fillColor = UIColor.blue.withAlphaComponent(CGFloat(circleAlpha))
             renderer.lineWidth = 2
             
             // Retrun the circle Renderer
             return renderer
         }
-        
         
         // Return the Overlay Renderer
         return MKOverlayRenderer()
@@ -94,13 +95,21 @@ class MeViewController: UIViewController, MKMapViewDelegate, UITableViewDelegate
     /// MAIN METHODS ///
     func centerMapOnLocation(location : CLLocation) {
         // Declare & initialize the coordinate region
-        let coordRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, 1000, 1000)
+        let coordRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, radius, radius)
         
         // Declare & Initialize a bounded circle around the user's location for better visualization
-        let boundedCircle = MKCircle(center: userLocation.coordinate, radius: 1000)
+        let boundedCircle = MKCircle(center: userLocation.coordinate, radius: radius/2)
         
         userMapView.setRegion(coordRegion, animated: true)
         userMapView.add(boundedCircle)
+        
+        circleAlpha = circleAlpha * 2
+        let innerCircle = MKCircle(center: userLocation.coordinate, radius: radius/3)
+        userMapView.add(innerCircle)
+        
+        circleAlpha = circleAlpha * 3
+        let innerCircle2 = MKCircle(center: userLocation.coordinate, radius: radius/5)
+        userMapView.add(innerCircle2)
     }
 
     /*
