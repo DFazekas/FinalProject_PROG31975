@@ -2,29 +2,26 @@
 //  User.swift
 //  FinalProject_PROG31975
 //
-//  Created by Devon on 2018-11-02.
+//  Created by Mark Philips on 2018-11-02.
 //  Copyright © 2018 PROG31975. All rights reserved.
 //
 
 import UIKit
 
 class User : NSObject {
-    // User contains sensitive information that identifies the individual, as well as their preferences and history.
+    // Declare all required variables for the User Class
+    var id : Int?
+    var name : String?
+    var email : String?
+    var currentLocation : String?
+    var savedPeeks = Array<String?>()
+    var allVotes : Int?
+    var allPosts = Array<Post?>()
+    var allReplies = Array<Reply?>()
+    var notificationSound : Bool?
+    var emailNotification : Bool?
     
-    var id : Int? // Identifier for the User.
-    var name : String? // Displayed name of the User.
-    var email : String? // Email for authentication.
-    var currentLocation : String? // Current location used for radius calculation.
-    var savedPeeks = Array<String?>() // List of saved locations to receieve posts from.
-    var allVotes : Int? // Displayed sum of all votes across all posts.
-    var allPosts = Array<Post?>() // Historic list of all posts.
-    var allReplies = Array<Reply?>() // Historic list of all replies of posts.
-    var notificationSound : Bool? // Controls whether notification sound (i.e., ON or OFF).
-    var emailNotification : Bool? // Controls whether to send email notifications as well (i.e., ON or OFF).
-    
-    func initWithData(name:String, email:String, currentLocation:String) {
-        // Constructor.
-        
+    func initWithData(name : String, email : String, currentLocation : String) {
         self.id = -1 //TODO: Assign unique ID.
         self.name = name
         self.email = email
