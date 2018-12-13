@@ -2,7 +2,7 @@
 //  MeViewController.swift
 //  FinalProject_PROG31975
 //
-//  Created by Mark Philips on 2018-11-14.
+//  Created by Devon Fazekas, Mark Philips, Mark Beauchamp, Justine Manikan on 2018-11-14.
 //  Copyright © 2018 PROG31975. All rights reserved.
 //
 

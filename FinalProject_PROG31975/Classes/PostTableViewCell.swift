@@ -2,7 +2,7 @@
 //  PostTableViewCell.swift
 //  FinalProject_PROG31975
 //
-//  Created by Devon Fazekas on 11/8/18.
+//  Created by Devon Fazekas, Mark Philips, Mark Beauchamp, Justine Manikan on 11/8/18.
 //  Copyright © 2018 PROG31975. All rights reserved.
 //
 
