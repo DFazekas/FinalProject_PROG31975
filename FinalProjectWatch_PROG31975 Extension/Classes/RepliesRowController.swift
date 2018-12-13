@@ -1,5 +1,5 @@
 //
-//  PostRowController.swift
+//  RepliesRowController.swift
 //  FinalProjectWatch_PROG31975 Extension
 //
 //  Created by Devon on 2018-12-13.
@@ -8,8 +8,8 @@
 
 import WatchKit
 
-class PostRowController: NSObject {
-    @IBOutlet var btnMessage : WKInterfaceButton!
+class RepliesRowController: NSObject {
+    @IBOutlet var lblMessage : WKInterfaceLabel!
     @IBOutlet var lblRating : WKInterfaceLabel!
     @IBOutlet var btnUpvote : WKInterfaceButton!
     @IBOutlet var btnDownvote : WKInterfaceButton!

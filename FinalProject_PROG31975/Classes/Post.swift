@@ -35,13 +35,14 @@ class Post : PostInterface, NSCoding {
     
     required convenience init?(coder decoder: NSCoder) {
         // Deserializes data - decodes for watch.
+        print("Post - decoder")
         guard
-            let postID = decoder.decodeObject(forKey: "postID") as? Int,
+//            let postID = decoder.decodeObject(forKey: "postID") as? Int,
             let authorID = decoder.decodeObject(forKey: "authorID") as? String,
             let message = decoder.decodeObject(forKey: "message") as? String,
-            let allVotes = decoder.decodeObject(forKey: "allVotes") as? Int,
-            let myVote = decoder.decodeObject(forKey: "myVote") as? Int,
-            let postedTime = decoder.decodeObject(forKey: "postedTime") as? String,
+//            let allVotes = decoder.decodeObject(forKey: "allVotes") as? Int,
+//            let myVote = decoder.decodeObject(forKey: "myVote") as? Int,
+//            let postedTime = decoder.decodeObject(forKey: "postedTime") as? String,
             let dateTime = decoder.decodeObject(forKey: "dateTime") as? Date
             else {
                 return nil
@@ -52,12 +53,13 @@ class Post : PostInterface, NSCoding {
     
     func encode(with coder: NSCoder) {
         // Serializes data - sends data to watch.
-        coder.encode(self.postID, forKey: "postID")
+        print("Post - coder")
+        //coder.encode(self.postID, forKey: "postID")
         coder.encode(self.authorID, forKey: "authorID")
         coder.encode(self.getMessage(), forKey: "message")
-        coder.encode(self.getAllVotes(), forKey: "allVotes")
-        coder.encode(self.getMyVote(), forKey: "myVote")
-        coder.encode(self.getPostedTime(), forKey: "postedTime")
+        //oder.encode(self.getAllVotes(), forKey: "allVotes")
+        //coder.encode(self.getMyVote(), forKey: "myVote")
+        //coder.encode(self.getPostedTime(), forKey: "postedTime")
         coder.encode(self.getDateTime(), forKey: "dateTime")
     }
 }

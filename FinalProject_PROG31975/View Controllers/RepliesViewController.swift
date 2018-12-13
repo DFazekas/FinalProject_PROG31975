@@ -37,7 +37,6 @@ class RepliesViewController: UIViewController, UITableViewDataSource, UITableVie
         
         self.timer2 = Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: #selector(self.refreshTable2), userInfo: nil, repeats: true);
         replyData.sendReply(message: reply.text, postId:String(self.post!.postID!))
-        
     }
     
     @objc func refreshTable2(){

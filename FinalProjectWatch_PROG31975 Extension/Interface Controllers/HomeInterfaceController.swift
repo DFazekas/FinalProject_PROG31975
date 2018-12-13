@@ -17,7 +17,7 @@ class HomeInterfaceController: WKInterfaceController, WCSessionDelegate {
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
-        print("awake")
+        print("HomeInterface - awake")
         if (WCSession.isSupported()) {
             let session = WCSession.default
             session.delegate = self
@@ -27,13 +27,13 @@ class HomeInterfaceController: WKInterfaceController, WCSessionDelegate {
 
     override func willActivate() {
         super.willActivate()
-        print("WillActivate")
+        print("HomeInterface - WillActivate")
         if (WCSession.default.isReachable) {
             let message = ["getPostData" : [:]]
             
             WCSession.default.sendMessage(message, replyHandler: {(result) -> Void in
                 if result["postData"] != nil {
-                    print("postDate received")
+                    print("HomeInterface - postData received")
                     let loadedData = result["postData"]
                     NSKeyedUnarchiver.setClass(Post.self, forClassName: "Post")
                     let loadedPerson = NSKeyedUnarchiver.unarchiveObject(with: loadedData as! Data) as? [Post]
@@ -43,7 +43,7 @@ class HomeInterfaceController: WKInterfaceController, WCSessionDelegate {
                     // Assign values to tableView cell.
                     for (index, post) in self.posts.enumerated() {
                         let row = self.postTable.rowController(at: index) as! PostRowController
-                        row.lblMessage.setText(post.getMessage())
+                        row.btnMessage.setTitle(post.getMessage())
                         row.lblRating.setText(post.getAllVotes().description)
                     }
                 }
@@ -60,7 +60,7 @@ class HomeInterfaceController: WKInterfaceController, WCSessionDelegate {
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) { }
     
     private func session(_ session: WCSession, didReceiveMessageData messageData: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
-        print("DidReceiveMessageData")
+        print("HomeInterace - DidReceiveMessageData")
         var replyValues = Dictionary<String, AnyObject>()
         let loadedData = messageData["postData"]
         let loadedPerson = NSKeyedUnarchiver.unarchiveObject(with: loadedData as! Data) as? [Post]

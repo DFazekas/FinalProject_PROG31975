@@ -40,7 +40,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                     
                     let then = i["time_posted"] as! String
                     
-                    
                     p.initWithData(authorID: i["user"] as! String, message: i["message"] as! String, dateString: then)
                     p.postID = i["id"] as? Int
                     let likes = (i["likes"] as? Int)
@@ -53,29 +52,20 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 self.timer.invalidate()
                 
                 // Watch.
-                print("Posts.count: \(self.posts.count)")
-                print("Is WCSession supported?")
+                print("HomeViewController - Posts.count: \(self.posts.count)")
                 if (WCSession.isSupported()) {
                     let session = WCSession.default
                     session.delegate = self
                     session.activate()
-                    if session.isPaired != true {
-                        print("Apple Watch is not paired")
-                    }
-                    print("Apple watch IS paired")
-                    if session.isWatchAppInstalled != true {
-                        print("WatchKi app is not installed")
-                    }
-                    print("Watch IS installed")
                 } else {
-                    print("WatchConnectivity is not supported on this device")
+                    print("HomeViewController - WatchConnectivity is not supported on this device")
                 }
+                
+                // Calls encoder.
                 let postData = NSKeyedArchiver.archivedData(withRootObject: posts)
-                print("sendWatchMessage")
+                print("HomeViewController - executing sendWatchMessage")
                 sendWatchMessage(postData)
             }
-            
-            
         }
     }
     
@@ -84,12 +74,10 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         // How many Posts to display.
        return posts.count
     }
-    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         // Height of cells in TableView.
         return 134
     }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Displays cells.
         
@@ -117,7 +105,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         return tableCell
     }
-
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // Onclick handling.
         
@@ -137,6 +124,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
         
         if WCSession.default.isReachable {
+            print("HomeViewController - sendWatchMessage")
             let message = ["postData" : msgData]
             WCSession.default.sendMessage(message, replyHandler: nil)
         }
@@ -146,6 +134,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func sessionDidBecomeInactive(_ session: WCSession) { }
     func sessionDidDeactivate(_ session: WCSession) { }
     func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
+        // TODO: Investigate difference in function didReceieveMessageDATA
+        print("HomeViewController - didReceiveMessage")
         var replyValues = Dictionary<String, AnyObject>()
         if message["getPostData"] != nil {
             NSKeyedArchiver.setClassName("Post", for: Post.self)
@@ -154,6 +144,15 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             replyHandler(replyValues)
         }
     }
+//    private func session(_ session: WCSession, didReceiveMessageData messageData: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
+//        print("HomeInterace - DidReceiveMessageData")
+//        var replyValues = Dictionary<String, AnyObject>()
+//        let loadedData = messageData["postData"]
+//        let loadedPerson = NSKeyedUnarchiver.unarchiveObject(with: loadedData as! Data) as? [Post]
+//        posts = loadedPerson!
+//        replyValues["status"] = "Post Received" as AnyObject?
+//        replyHandler(replyValues)
+//    }
     
     ///// Misc. content.
     override func viewDidLoad() {

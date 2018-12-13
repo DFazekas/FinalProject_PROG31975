@@ -12,6 +12,12 @@
 		0092CCAA21C25D5F00E3B23A /* PostRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0092CCA921C25D5F00E3B23A /* PostRowController.swift */; };
 		0092CCAB21C25E2C00E3B23A /* PostInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B78CD8218D32AE00157530 /* PostInterface.swift */; };
 		0092CCAC21C25E5200E3B23A /* Reply.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B78CD6218CD68E00157530 /* Reply.swift */; };
+		0092CCAE21C2FB4F00E3B23A /* RepliesRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0092CCAD21C2FB4F00E3B23A /* RepliesRowController.swift */; };
+		0092CCB021C2FBFD00E3B23A /* RepliesInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0092CCAF21C2FBFD00E3B23A /* RepliesInterfaceController.swift */; };
+		0092CCB821C2FE7300E3B23A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0092CCB721C2FE7300E3B23A /* AppDelegate.swift */; };
+		0092CCBA21C2FE7300E3B23A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0092CCB921C2FE7300E3B23A /* ViewController.swift */; };
+		0092CCBD21C2FE7300E3B23A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0092CCBB21C2FE7300E3B23A /* Main.storyboard */; };
+		0092CCBF21C2FE7500E3B23A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0092CCBE21C2FE7500E3B23A /* Assets.xcassets */; };
 		00B78CBC2187CDEC00157530 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B78CBB2187CDEC00157530 /* AppDelegate.swift */; };
 		00B78CBE2187CDEC00157530 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B78CBD2187CDEC00157530 /* HomeViewController.swift */; };
 		00B78CC12187CDEC00157530 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00B78CBF2187CDEC00157530 /* Main.storyboard */; };
@@ -94,6 +100,14 @@
 /* Begin PBXFileReference section */
 		0092CCA621C25A8A00E3B23A /* HomeInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInterfaceController.swift; sourceTree = "<group>"; };
 		0092CCA921C25D5F00E3B23A /* PostRowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRowController.swift; sourceTree = "<group>"; };
+		0092CCAD21C2FB4F00E3B23A /* RepliesRowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepliesRowController.swift; sourceTree = "<group>"; };
+		0092CCAF21C2FBFD00E3B23A /* RepliesInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepliesInterfaceController.swift; sourceTree = "<group>"; };
+		0092CCB521C2FE7300E3B23A /* tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tvOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0092CCB721C2FE7300E3B23A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0092CCB921C2FE7300E3B23A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0092CCBC21C2FE7300E3B23A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0092CCBE21C2FE7500E3B23A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0092CCC021C2FE7500E3B23A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00B78CB82187CDEC00157530 /* FinalProject_PROG31975.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinalProject_PROG31975.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00B78CBB2187CDEC00157530 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		00B78CBD2187CDEC00157530 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -137,6 +151,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0092CCB221C2FE7300E3B23A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		00B78CB52187CDEC00157530 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -177,6 +198,7 @@
 			children = (
 				DF6DB36521B67D4F0085CF11 /* ExtensionDelegate.swift */,
 				0092CCA921C25D5F00E3B23A /* PostRowController.swift */,
+				0092CCAD21C2FB4F00E3B23A /* RepliesRowController.swift */,
 				DF6DB36721B67D4F0085CF11 /* NotificationController.swift */,
 			);
 			path = Classes;
@@ -194,9 +216,54 @@
 			isa = PBXGroup;
 			children = (
 				0092CCA621C25A8A00E3B23A /* HomeInterfaceController.swift */,
+				0092CCAF21C2FBFD00E3B23A /* RepliesInterfaceController.swift */,
 				DF6DB36321B67D4E0085CF11 /* InterfaceController.swift */,
 			);
 			path = "Interface Controllers";
+			sourceTree = "<group>";
+		};
+		0092CCB621C2FE7300E3B23A /* tvOS */ = {
+			isa = PBXGroup;
+			children = (
+				0092CCC721C2FEE300E3B23A /* Classes */,
+				0092CCC621C2FED600E3B23A /* View Controllers */,
+				0092CCC521C2FECD00E3B23A /* Assets */,
+				0092CCC421C2FEBD00E3B23A /* Storyboards */,
+				0092CCC021C2FE7500E3B23A /* Info.plist */,
+			);
+			path = tvOS;
+			sourceTree = "<group>";
+		};
+		0092CCC421C2FEBD00E3B23A /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				0092CCBB21C2FE7300E3B23A /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		0092CCC521C2FECD00E3B23A /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				0092CCBE21C2FE7500E3B23A /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		0092CCC621C2FED600E3B23A /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0092CCB921C2FE7300E3B23A /* ViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		0092CCC721C2FEE300E3B23A /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				0092CCB721C2FE7300E3B23A /* AppDelegate.swift */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		00B78CAF2187CDEC00157530 = {
@@ -205,6 +272,7 @@
 				00B78CBA2187CDEC00157530 /* FinalProject_PROG31975 */,
 				DF6DB35321B67D4C0085CF11 /* FinalProjectWatch_PROG31975 */,
 				DF6DB36221B67D4D0085CF11 /* FinalProjectWatch_PROG31975 Extension */,
+				0092CCB621C2FE7300E3B23A /* tvOS */,
 				00B78CB92187CDEC00157530 /* Products */,
 				DFD011F521B6348900922ED7 /* Frameworks */,
 			);
@@ -216,6 +284,7 @@
 				00B78CB82187CDEC00157530 /* FinalProject_PROG31975.app */,
 				DF6DB35221B67D4C0085CF11 /* FinalProjectWatch_PROG31975.app */,
 				DF6DB35E21B67D4D0085CF11 /* FinalProjectWatch_PROG31975 Extension.appex */,
+				0092CCB521C2FE7300E3B23A /* tvOS.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -327,6 +396,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		0092CCB421C2FE7300E3B23A /* tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0092CCC121C2FE7500E3B23A /* Build configuration list for PBXNativeTarget "tvOS" */;
+			buildPhases = (
+				0092CCB121C2FE7300E3B23A /* Sources */,
+				0092CCB221C2FE7300E3B23A /* Frameworks */,
+				0092CCB321C2FE7300E3B23A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = tvOS;
+			productName = tvOS;
+			productReference = 0092CCB521C2FE7300E3B23A /* tvOS.app */;
+			productType = "com.apple.product-type.application";
+		};
 		00B78CB72187CDEC00157530 /* FinalProject_PROG31975 */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00B78CCA2187CDEF00157530 /* Build configuration list for PBXNativeTarget "FinalProject_PROG31975" */;
@@ -386,10 +472,13 @@
 		00B78CB02187CDEC00157530 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0940;
+				LastSwiftUpdateCheck = 0930;
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = PROG31975;
 				TargetAttributes = {
+					0092CCB421C2FE7300E3B23A = {
+						CreatedOnToolsVersion = 9.3;
+					};
 					00B78CB72187CDEC00157530 = {
 						CreatedOnToolsVersion = 9.3;
 					};
@@ -417,11 +506,21 @@
 				00B78CB72187CDEC00157530 /* FinalProject_PROG31975 */,
 				DF6DB35121B67D4C0085CF11 /* FinalProjectWatch_PROG31975 */,
 				DF6DB35D21B67D4D0085CF11 /* FinalProjectWatch_PROG31975 Extension */,
+				0092CCB421C2FE7300E3B23A /* tvOS */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		0092CCB321C2FE7300E3B23A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0092CCBF21C2FE7500E3B23A /* Assets.xcassets in Resources */,
+				0092CCBD21C2FE7300E3B23A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		00B78CB62187CDEC00157530 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -452,6 +551,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0092CCB121C2FE7300E3B23A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0092CCBA21C2FE7300E3B23A /* ViewController.swift in Sources */,
+				0092CCB821C2FE7300E3B23A /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		00B78CB42187CDEC00157530 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -485,11 +593,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0092CCAE21C2FB4F00E3B23A /* RepliesRowController.swift in Sources */,
 				0092CCAC21C25E5200E3B23A /* Reply.swift in Sources */,
 				0092CCAB21C25E2C00E3B23A /* PostInterface.swift in Sources */,
 				0092CCA821C25B2F00E3B23A /* Post.swift in Sources */,
 				DF6DB36821B67D4F0085CF11 /* NotificationController.swift in Sources */,
 				0092CCAA21C25D5F00E3B23A /* PostRowController.swift in Sources */,
+				0092CCB021C2FBFD00E3B23A /* RepliesInterfaceController.swift in Sources */,
 				DF6DB36621B67D4F0085CF11 /* ExtensionDelegate.swift in Sources */,
 				0092CCA721C25A8A00E3B23A /* HomeInterfaceController.swift in Sources */,
 				DF6DB36421B67D4E0085CF11 /* InterfaceController.swift in Sources */,
@@ -512,6 +622,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		0092CCBB21C2FE7300E3B23A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0092CCBC21C2FE7300E3B23A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
 		00B78CBF2187CDEC00157530 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -539,6 +657,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		0092CCC221C2FE7500E3B23A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = tvOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = swift.tvOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 11.3;
+			};
+			name = Debug;
+		};
+		0092CCC321C2FE7500E3B23A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = tvOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = swift.tvOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 11.3;
+			};
+			name = Release;
+		};
 		00B78CC82187CDEF00157530 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -768,6 +926,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0092CCC121C2FE7500E3B23A /* Build configuration list for PBXNativeTarget "tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0092CCC221C2FE7500E3B23A /* Debug */,
+				0092CCC321C2FE7500E3B23A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		00B78CB32187CDEC00157530 /* Build configuration list for PBXProject "FinalProject_PROG31975" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

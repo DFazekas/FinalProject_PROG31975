@@ -9,53 +9,126 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14031"/>
     </dependencies>
     <scenes>
-        <!--Home Interface Controller-->
+        <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="HomeInterfaceController" customModule="FinalProjectWatch_PROG31975_Extension">
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="FinalProjectWatch_PROG31975_Extension">
                     <items>
-                        <table alignment="left" id="pFG-hc-u4Z">
+                        <button width="1" alignment="left" title="Home" id="SOk-Yz-Zo7">
+                            <connections>
+                                <segue destination="rCT-zW-kt3" kind="modal" id="Jjq-1c-dqc"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="220" y="345"/>
+        </scene>
+        <!--Home Interface Controller-->
+        <scene sceneID="kdN-m6-0oE">
+            <objects>
+                <controller id="rCT-zW-kt3" customClass="HomeInterfaceController" customModule="FinalProjectWatch_PROG31975_Extension">
+                    <items>
+                        <table alignment="left" id="bDH-kS-XJZ">
                             <items>
-                                <tableRow identifier="PostRowController" id="ZZD-qp-HF9" customClass="PostRowController" customModule="FinalProjectWatch_PROG31975_Extension">
-                                    <group key="rootItem" width="1" height="71" alignment="left" id="88H-Bt-GxR">
+                                <tableRow identifier="PostRowController" id="l8g-GS-fyd" customClass="PostRowController" customModule="FinalProjectWatch_PROG31975_Extension">
+                                    <group key="rootItem" width="1" height="61" alignment="left" id="Yfv-FC-63A">
                                         <items>
-                                            <group width="81" height="76" alignment="left" layout="vertical" id="iNR-ES-UvS">
+                                            <group width="84" height="66" alignment="left" layout="vertical" id="chB-UV-UbB">
                                                 <items>
-                                                    <label alignment="left" text="Message" id="QVq-af-yLa">
-                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <fontDescription key="font" type="system" pointSize="14"/>
-                                                    </label>
-                                                    <label alignment="left" verticalAlignment="bottom" text="Vote" id="4Qj-ut-m2Q">
-                                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <fontDescription key="font" type="system" pointSize="12"/>
-                                                    </label>
+                                                    <button width="1" height="56" alignment="left" title="Messsage" id="I20-5s-PcO">
+                                                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="font" type="system" pointSize="9"/>
+                                                        <connections>
+                                                            <segue destination="ypF-Ac-s7b" kind="modal" id="67i-KL-itb"/>
+                                                        </connections>
+                                                    </button>
                                                 </items>
                                             </group>
-                                            <group width="1" alignment="left" layout="vertical" id="21m-mr-AnU">
+                                            <group width="42" height="60" alignment="center" layout="vertical" id="cgp-rM-XQV">
                                                 <items>
-                                                    <button width="40" height="30" alignment="left" title="+" id="LTd-DE-a03"/>
-                                                    <button width="40" height="30" alignment="left" title="-" id="lkI-Dh-T84"/>
+                                                    <button width="32" height="19" alignment="right" backgroundImage="icon_up_vote" id="J0e-ox-gTx"/>
+                                                    <label width="34" alignment="right" verticalAlignment="center" text="Vote" textAlignment="center" id="GbG-Lh-OHW">
+                                                        <color key="textColor" red="0.1529411765" green="0.44705882349999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <fontDescription key="font" type="system" pointSize="10"/>
+                                                    </label>
+                                                    <button width="34" height="21" alignment="right" verticalAlignment="bottom" backgroundImage="icon_down_vote" id="H1t-Ey-zhw">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </button>
                                                 </items>
                                             </group>
                                         </items>
                                     </group>
                                     <connections>
-                                        <outlet property="btnDownvote" destination="lkI-Dh-T84" id="5V0-c1-0EN"/>
-                                        <outlet property="btnUpvote" destination="LTd-DE-a03" id="k5x-y0-ps5"/>
-                                        <outlet property="lblMessage" destination="QVq-af-yLa" id="gwT-1y-UNp"/>
-                                        <outlet property="lblRating" destination="4Qj-ut-m2Q" id="6rQ-dQ-uey"/>
+                                        <outlet property="btnDownvote" destination="H1t-Ey-zhw" id="HOT-B8-4EP"/>
+                                        <outlet property="btnMessage" destination="I20-5s-PcO" id="V2r-aC-AqS"/>
+                                        <outlet property="btnUpvote" destination="J0e-ox-gTx" id="l4y-Ev-UZo"/>
+                                        <outlet property="lblRating" destination="GbG-Lh-OHW" id="Snv-bl-tK5"/>
                                     </connections>
                                 </tableRow>
                             </items>
                         </table>
                     </items>
-                    <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <connections>
-                        <outlet property="postTable" destination="pFG-hc-u4Z" id="3tf-Ez-EN5"/>
+                        <outlet property="postTable" destination="bDH-kS-XJZ" id="5Sm-bd-Wqk"/>
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="220" y="345"/>
+            <point key="canvasLocation" x="530" y="339"/>
+        </scene>
+        <!--Home Interface Controller-->
+        <scene sceneID="fBf-6B-P0V">
+            <objects>
+                <controller id="ypF-Ac-s7b" customClass="HomeInterfaceController" customModule="FinalProjectWatch_PROG31975_Extension">
+                    <items>
+                        <table alignment="left" id="TZX-kC-Kk6">
+                            <items>
+                                <tableRow id="z9h-kq-cjL" customClass="RepliesRowController" customModule="FinalProjectWatch_PROG31975_Extension">
+                                    <group key="rootItem" width="1" height="57" alignment="left" id="KAI-xc-QyZ">
+                                        <items>
+                                            <group width="42" alignment="center" layout="vertical" id="gbl-ge-mta">
+                                                <items>
+                                                    <button width="32" height="19" alignment="right" backgroundImage="icon_up_vote" id="egw-KY-wpn"/>
+                                                    <label width="34" alignment="right" verticalAlignment="center" text="Vote" textAlignment="center" id="aOi-OU-OdH">
+                                                        <color key="textColor" red="0.1529411765" green="0.44705882349999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <fontDescription key="font" type="system" pointSize="10"/>
+                                                    </label>
+                                                    <button width="32" height="21" alignment="right" verticalAlignment="bottom" backgroundImage="icon_down_vote" id="VeW-Al-Kvr">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </button>
+                                                </items>
+                                            </group>
+                                            <group width="84" height="66" alignment="left" layout="vertical" id="xlO-W3-Dfe">
+                                                <items>
+                                                    <label width="102" height="59" alignment="left" text="Message" textAlignment="left" id="S3x-j7-UZL">
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="font" type="system" pointSize="10"/>
+                                                    </label>
+                                                </items>
+                                            </group>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="btnDownvote" destination="VeW-Al-Kvr" id="Ad5-Kk-pID"/>
+                                        <outlet property="btnUpvote" destination="egw-KY-wpn" id="krt-pp-PEj"/>
+                                        <outlet property="lblMessage" destination="S3x-j7-UZL" id="RFE-xe-ktN"/>
+                                        <outlet property="lblRating" destination="aOi-OU-OdH" id="78d-b7-7IV"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <connections>
+                        <outlet property="postTable" destination="TZX-kC-Kk6" id="tgX-Vo-9mx"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="893" y="339"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
