@@ -25,7 +25,7 @@
                                 <items>
                                     <navigationItem id="Ogi-LD-5rN">
                                         <nil key="title"/>
-                                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="bM9-bC-reZ">
+                                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="bM9-bC-reZ">
                                             <rect key="frame" x="146" y="7.5" width="83" height="29"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -291,15 +291,15 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9tn-5H-3iL">
-                                <rect key="frame" x="1" y="196" width="375" height="164"/>
+                                <rect key="frame" x="1" y="196" width="375" height="413"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReplyCell" rowHeight="134" id="MXk-eI-09m" customClass="ReplyTableViewCell" customModule="FinalProject_PROG31975" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="134"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReplyCell" rowHeight="385" id="MXk-eI-09m" customClass="ReplyTableViewCell" customModule="FinalProject_PROG31975" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="385"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MXk-eI-09m" id="Rkl-xn-XhX">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="133.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="384.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You have nice eyes" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SN4-rc-hUY" userLabel="Message">
@@ -376,6 +376,9 @@
                                 <rect key="frame" x="316" y="617" width="36" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Send"/>
+                                <connections>
+                                    <action selector="sendReply" destination="zCT-dD-LZR" eventType="touchUpInside" id="Xqc-AB-gMG"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -385,6 +388,7 @@
                         <outlet property="lblLikes" destination="DyZ-KF-6BZ" id="gB5-8m-YhT"/>
                         <outlet property="message" destination="h4R-np-MqW" id="INy-4X-o3k"/>
                         <outlet property="myTable" destination="9tn-5H-3iL" id="p6P-25-bfA"/>
+                        <outlet property="reply" destination="hIX-2N-3Lo" id="CQT-zo-j6i"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9TN-2B-65z" userLabel="First Responder" sceneMemberID="firstResponder"/>

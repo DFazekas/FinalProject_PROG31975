@@ -243,6 +243,36 @@ class GetData: NSObject {
         
     }
     
+    func sendReply(message:String, postId:String){
+        
+        let url = "http://markbeauchamp.ca:5000/api/reply" as String
+        guard let endpoint = URL(string: url) else {
+            print("Error creating endpoint")
+            return
+        }
+        
+        let json: [String: Any] = ["message": message,"postId": postId]
+        
+        let jsonData = try? JSONSerialization.data(withJSONObject: json)
+        
+        var request = URLRequest(url: endpoint)
+        request.httpMethod = "POST"
+        var headers = request.allHTTPHeaderFields ?? [:]
+        headers["Content-Type"] = "application/json"
+        request.allHTTPHeaderFields = headers
+        
+        request.httpBody = jsonData
+        
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            do {
+                
+              self.dbData = []
+            }
+            }.resume()
+        
+        
+    }
+    
     func jsonParser() {
         
         

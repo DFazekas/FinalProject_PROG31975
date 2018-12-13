@@ -13,11 +13,36 @@ class RepliesViewController: UIViewController, UITableViewDataSource, UITableVie
     var post : Post? = nil
     var replies : [Reply] = []
     var timer : Timer!
+    var timer2 : Timer!
+
     let getData = GetData()
+    let replyData = GetData()
     @IBOutlet var myTable : UITableView!
     @IBOutlet var lblLikes : UILabel!
     @IBOutlet var message : UILabel!
-
+    @IBOutlet var reply : UITextView!
+    
+    
+    @IBAction func sendReply(){
+        
+        self.timer2 = Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: #selector(self.refreshTable2), userInfo: nil, repeats: true);
+        replyData.sendReply(message: reply.text, postId:String(self.post!.postID!))
+        
+    }
+    
+    @objc func refreshTable2(){
+        if(replyData.dbData != nil)
+        {
+           
+            self.timer = Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: #selector(self.refreshTable), userInfo: nil, repeats: true);
+            
+            getData.getReplies(id:(self.post?.postID)!)
+                self.myTable.reloadData()
+                self.timer2.invalidate()
+            }
+    
+    }
+    
     
     // swift 4 update
     @objc func refreshTable(){
